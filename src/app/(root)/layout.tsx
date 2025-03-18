@@ -1,3 +1,6 @@
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { NewsLetter } from "@/components/layout/news-letter";
 import React from "react";
 
 const RootLayout = ({
@@ -6,10 +9,12 @@ const RootLayout = ({
 	children: React.ReactNode;
 }>) => {
 	return (
-		<div>
-			RootLayout
-			{children}
-		</div>
+		<>
+			<Header />
+			<main className="container">{children}</main>
+			<NewsLetter />
+			<Footer />
+		</>
 	);
 };
 
