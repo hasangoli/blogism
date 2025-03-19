@@ -11,7 +11,7 @@ const RootLayout = ({
 	return (
 		<>
 			<Header />
-			<main className="container">{children}</main>
+			<main>{children}</main>
 			<NewsLetter />
 			<Footer />
 		</>
