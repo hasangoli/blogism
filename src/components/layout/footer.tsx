@@ -30,16 +30,16 @@ const data = {
 const socialIcon = (key: string) => {
 	switch (key) {
 		case "instagram":
-			return <Instagram />;
+			return <Instagram size={20} />;
 
 		case "youtube":
-			return <Youtube />;
+			return <Youtube size={20} />;
 
 		case "linkedin":
-			return <Linkedin />;
+			return <Linkedin size={20} />;
 
 		case "github":
-			return <Github />;
+			return <Github size={20} />;
 
 		default:
 			break;
@@ -49,13 +49,13 @@ const socialIcon = (key: string) => {
 export const Footer = () => {
 	return (
 		<footer className="container">
-			<div className="grid grid-cols-1 gap-12 mb-4">
-				<div>
+			<div className="grid grid-cols-1 md:grid-cols-10 gap-12 mb-4">
+				<div className="md:col-span-10 lg:col-span-3">
 					<h2 className="text-3xl font-extrabold mb-4">{data.logo}</h2>
-					<p className="text-justify">{data.about}</p>
+					<p className="text-justify text-sm">{data.about}</p>
 				</div>
-				<div>
-					<h4 className="inline-block pb-2 text-lg border-b-[1px] border-border text-bold mb-4">
+				<div className="md:col-span-5 lg:col-span-3">
+					<h4 className="inline-block pb-2 border-b-[1px] border-border text-bold mb-4">
 						دسته بندی ها
 					</h4>
 					<ul className="flex flex-wrap h-6 gap-3">
@@ -69,11 +69,11 @@ export const Footer = () => {
 						))}
 					</ul>
 				</div>
-				<div>
-					<h4 className="inline-block pb-2 text-lg border-b-[1px] border-border text-bold mb-4">
+				<div className="md:col-span-2 lg:col-span-2">
+					<h4 className="inline-block pb-2 border-b-[1px] border-border text-bold mb-4">
 						دسترسی سریع
 					</h4>
-					<ul>
+					<ul className="text-sm">
 						{data.links.map(link => (
 							<li key={link.url}>
 								<Link href={link.url}>{link.title}</Link>
@@ -81,8 +81,8 @@ export const Footer = () => {
 						))}
 					</ul>
 				</div>
-				<div>
-					<h4 className="inline-block pb-2 text-lg border-b-[1px] border-border text-bold mb-4">
+				<div className="md:col-span-3 lg:col-span-2">
+					<h4 className="inline-block pb-2 border-b-[1px] border-border text-bold mb-4">
 						شبکه های اجتماعی
 					</h4>
 					<ul className="flex flex-wrap gap-x-3">
@@ -95,7 +95,7 @@ export const Footer = () => {
 				</div>
 			</div>
 
-			<p className="text-center border-t-[1px] border-border py-3">
+			<p className="text-center text-sm border-t-[1px] border-border py-3">
 				تمامی حقوق محفوظ است،{" "}
 				{new Intl.DateTimeFormat("fa-IR", {
 					year: "numeric",
