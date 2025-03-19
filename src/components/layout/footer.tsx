@@ -49,12 +49,12 @@ const socialIcon = (key: string) => {
 export const Footer = () => {
 	return (
 		<footer className="container">
-			<div className="grid grid-cols-1 md:grid-cols-10 gap-12 mb-4">
-				<div className="md:col-span-10 lg:col-span-3">
+			<div className="grid grid-cols-2 md:grid-cols-10 gap-12 mb-4">
+				<div className="col-span-2 md:col-span-10 lg:col-span-3">
 					<h2 className="text-3xl font-extrabold mb-4">{data.logo}</h2>
 					<p className="text-justify text-sm">{data.about}</p>
 				</div>
-				<div className="md:col-span-5 lg:col-span-3">
+				<div className="col-span-2 md:col-span-5 lg:col-span-3">
 					<h4 className="inline-block pb-2 border-b-[1px] border-border text-bold mb-4">
 						دسته بندی ها
 					</h4>
