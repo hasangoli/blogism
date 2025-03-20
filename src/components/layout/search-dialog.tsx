@@ -28,7 +28,7 @@ export const SearchDialog = () => {
 				</DialogHeader>
 				<form className="flex items-center space-x-2">
 					<div className="grid flex-1 gap-2">
-						<Input placeholder="جست و جو ..." />
+						<Input type="text" placeholder="جست و جو ..." />
 					</div>
 					<Button type="submit" size="sm">
 						<Search />

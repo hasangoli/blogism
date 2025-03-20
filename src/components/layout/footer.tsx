@@ -49,7 +49,7 @@ const socialIcon = (key: string) => {
 export const Footer = () => {
 	return (
 		<footer className="container">
-			<div className="grid grid-cols-2 md:grid-cols-10 gap-12 mb-4">
+			<div className="grid grid-cols-2 md:grid-cols-10 gap-12 py-12">
 				<div className="col-span-2 md:col-span-10 lg:col-span-3">
 					<h2 className="text-3xl font-extrabold mb-4">{data.logo}</h2>
 					<p className="text-justify text-sm">{data.about}</p>
