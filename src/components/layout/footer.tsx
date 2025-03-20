@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Github, Instagram, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 import { Fragment } from "react";
+import { CategoryItem, CategoryType } from "../category-item";
 
 const data = {
 	logo: "LOGO",
@@ -58,12 +59,12 @@ export const Footer = () => {
 					<h4 className="inline-block pb-2 border-b-[1px] border-border text-bold mb-4">
 						دسته بندی ها
 					</h4>
-					<ul className="flex flex-wrap h-6 gap-3">
-						{data.categories.map((category, index) => (
-							<Fragment key={index}>
+					<ul className="flex flex-wrap h-7 gap-3">
+						{data.categories.map((category: CategoryType, index: number) => (
+							<Fragment key={category.slug}>
 								{index ? <Separator orientation="vertical" /> : null}
-								<li className="border-[1px] border-border rounded-full text-xs py-1 px-2">
-									<Link href={category.slug}>{category.name}</Link>
+								<li>
+									<CategoryItem category={category} />
 								</li>
 							</Fragment>
 						))}
