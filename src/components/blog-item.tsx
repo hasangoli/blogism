@@ -67,7 +67,7 @@ export const BlogItem = ({
 						حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
 						طراحی اساسا مورد استفاده قرار گیرد.
 					</p>
-					<Button type="button" className="mt-3 text-end">
+					<Button type="button" className="mt-3 text-end" asChild>
 						<Link href="/blogs/1">مطالعه</Link>
 					</Button>
 				</CardFooter>
