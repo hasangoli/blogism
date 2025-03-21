@@ -8,10 +8,10 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { AuthorItem } from "./author-item";
+import { AuthorItem } from "../author-item";
+import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
 import { CategoryItem } from "./category-item";
-import { Button } from "./ui/button";
-import { Separator } from "./ui/separator";
 
 export const BlogItem = ({
 	className,

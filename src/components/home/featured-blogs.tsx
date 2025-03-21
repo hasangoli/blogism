@@ -1,4 +1,4 @@
-import { BlogItem } from "../blog-item";
+import { BlogItem } from "../blogs/blog-item";
 
 export const FeaturedBlogs = () => {
 	return (

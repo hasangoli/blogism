@@ -121,6 +121,14 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .ugc-content * {
+    all: revert;
+  }
+
+  .ugc-content img {
+    max-width: 100% !important;
+  }
 }
 
 @utility container {

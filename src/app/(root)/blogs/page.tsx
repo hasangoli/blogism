@@ -1,4 +1,4 @@
-import { BlogItem } from "@/components/blog-item";
+import { BlogItem } from "@/components/blogs/blog-item";
 import { BlogsPagination } from "@/components/blogs/blogs-pagination";
 
 const BlogsPage = () => {

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BlogItem } from "../blog-item";
 import { Button } from "../ui/button";
+import { BlogItem } from "../blogs/blog-item";
 
 const LatestBlogs = () => {
 	return (

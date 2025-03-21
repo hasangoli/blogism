@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Github, Instagram, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 import { Fragment } from "react";
-import { CategoryItem, CategoryType } from "../category-item";
+import { CategoryItem, CategoryType } from "../blogs/category-item";
 
 const data = {
 	logo: "LOGO",
