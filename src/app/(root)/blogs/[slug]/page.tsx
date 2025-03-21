@@ -1,5 +1,7 @@
 import { AuthorItem } from "@/components/author-item";
+import { BlogItem } from "@/components/blogs/blog-item";
 import { CategoryItem } from "@/components/blogs/category-item";
+import { CommentForm } from "@/components/blogs/comment-form";
 import { TagItem } from "@/components/blogs/tag-item";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
@@ -93,6 +95,18 @@ const BlogPage = () => {
 						</a>
 					</li>
 				</ul>
+			</section>
+			<section className="container lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mt-6">
+				<h2 className="text-2xl font-bold mb-4">نظرات (3)</h2>
+				<CommentForm/>
+			</section>
+			<section className="container mt-6">
+				<h2 className="text-2xl font-bold mb-4">موارد مشابه</h2>
+				<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+					{[1, 2, 3, 4].map(blog => (
+						<BlogItem key={blog} />
+					))}
+				</div>
 			</section>
 		</>
 	);

@@ -13,8 +13,8 @@ export const menuItems = [
 
 export const Header = () => {
 	return (
-		<header className="container py-4">
-			<div className="grid grid-cols-3 items-center">
+		<header className="sticky top-0 bg-background z-50 py-4 border-border border-b-[1px]">
+			<div className="container grid grid-cols-3 items-center">
 				<div className="text-start md:hidden">
 					<MobileNav/>
 				</div>
