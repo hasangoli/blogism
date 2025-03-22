@@ -59,7 +59,7 @@ export const CommentForm = () => {
 							)}
 						/>
 					</CardContent>
-					<CardFooter>
+					<CardFooter className="flex justify-end">
 						<Button type="submit">ارسال نظر</Button>
 					</CardFooter>
 				</Card>
