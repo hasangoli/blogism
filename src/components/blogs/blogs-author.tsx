@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export type AuthorType = {
+export type BlogsAuthorType = {
 	href: string;
 	src: string;
 	fullName: string;
 	dimension?: number;
 };
 
-export const AuthorItem = ({
+export const BlogsAuthor = ({
 	href,
 	src,
 	fullName,
 	dimension = 25,
-}: AuthorType) => {
+}: BlogsAuthorType) => {
 	return (
 		<Link href={href} className="flex items-center gap-1">
 			<Image

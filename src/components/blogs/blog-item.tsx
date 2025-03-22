@@ -8,9 +8,9 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { AuthorItem } from "../author-item";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
+import { BlogsAuthor } from "./blogs-author";
 import { CategoryItem } from "./category-item";
 
 export const BlogItem = ({
@@ -31,7 +31,7 @@ export const BlogItem = ({
 					</Link>
 					<ul className="flex items-center h-7 gap-3">
 						<li>
-							<AuthorItem
+							<BlogsAuthor
 								href="/blogs/1"
 								src="/images/test.jpg"
 								fullName="حسن گلی"

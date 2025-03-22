@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { AuthorItem } from "../author-item";
 import { Separator } from "../ui/separator";
+import { BlogsAuthor } from "./blogs-author";
 import { CategoryItem } from "./category-item";
 
 export const BlogDetails = () => {
@@ -16,7 +16,7 @@ export const BlogDetails = () => {
 			</div>
 			<ul className="flex items-center h-7 gap-3">
 				<li>
-					<AuthorItem
+					<BlogsAuthor
 						href="/authors/1"
 						src="/images/test.jpg"
 						fullName="حسن گلی"
