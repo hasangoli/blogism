@@ -24,8 +24,7 @@ export default function RootLayout({
 				<Providers
 					dir="rtl"
 					attribute="class"
-					defaultTheme="system"
-					enableSystem
+					defaultTheme="light"
 					disableTransitionOnChange>
 					{children}
 				</Providers>
