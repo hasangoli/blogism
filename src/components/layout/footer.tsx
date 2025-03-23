@@ -89,7 +89,7 @@ export const Footer = () => {
 					<ul className="flex flex-wrap gap-x-3">
 						{data.socials.map(social => (
 							<li key={social.url}>
-								<Link href={social.url}>{socialIcon(social.icon)}</Link>
+								<a href={social.url}>{socialIcon(social.icon)}</a>
 							</li>
 						))}
 					</ul>
