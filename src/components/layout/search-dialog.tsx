@@ -14,7 +14,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Search } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form, FormControl, FormField, FormItem } from "../ui/form";
+import {
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormMessage,
+} from "../ui/form";
 
 const formSchema = z.object({
 	query: z.string().min(1, {
@@ -50,7 +56,7 @@ export const SearchDialog = () => {
 				</DialogHeader>
 				<Form {...form}>
 					<form
-						className="flex items-center space-x-2"
+						className="flex items-start space-x-2"
 						onSubmit={form.handleSubmit(onSubmit)}>
 						<FormField
 							control={form.control}
@@ -58,8 +64,14 @@ export const SearchDialog = () => {
 							render={({ field }) => (
 								<FormItem className="grid flex-1">
 									<FormControl>
-										<Input type="text" placeholder="جست و جو ..." {...field} />
+										<Input
+											type="text"
+											placeholder="جست و جو ..."
+											autoComplete="off"
+											{...field}
+										/>
 									</FormControl>
+									<FormMessage />
 								</FormItem>
 							)}
 						/>

@@ -52,7 +52,11 @@ export const CommentForm = () => {
 							render={({ field }) => (
 								<FormItem>
 									<FormControl>
-										<Textarea placeholder="متن نظر شما" {...field} />
+										<Textarea
+											placeholder="متن نظر شما"
+											autoComplete="off"
+											{...field}
+										/>
 									</FormControl>
 									<FormMessage />
 								</FormItem>
