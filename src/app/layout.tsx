@@ -9,8 +9,8 @@ const iranSans = localFont({
 });
 
 export const metadata: Metadata = {
-	title: "blogism",
-	description: "blogists utopia",
+	title: "بلاگیسم",
+	description: "برترین پلتفرم فارسی زبان برای انتشار محتوا و مقالات شما",
 };
 
 export default function RootLayout({
