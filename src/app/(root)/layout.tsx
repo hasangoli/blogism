@@ -1,19 +1,23 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { NewsLetter } from "@/components/layout/news-letter";
+import { fetchSettings } from "@/lib/api";
+import { Settings } from "@/type";
 import React from "react";
 
-const RootLayout = ({
+const RootLayout = async ({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) => {
+	const settings = (await fetchSettings()) as Settings;
+
 	return (
 		<>
-			<Header />
+			<Header settings={settings} />
 			<main>{children}</main>
 			<NewsLetter />
-			<Footer />
+			<Footer settings={settings} />
 		</>
 	);
 };

@@ -1,3 +1,11 @@
 {
-	"cSpell.words": ["autoincrement", "blogism", "turbopack", "UNPOOLED", "ادمین"]
+	"cSpell.words": [
+		"autoincrement",
+		"blogism",
+		"turbopack",
+		"UNPOOLED",
+		"ادمین",
+		"بلاگیسم"
+	],
+	"postman.settings.dotenv-detection-notification-visibility": false
 }

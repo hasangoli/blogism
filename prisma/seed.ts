@@ -27,52 +27,28 @@ async function main(): Promise<void> {
 		},
 		update: {},
 		create: {
-			headerLogo: "",
-			footerLogo: "",
-			description: "",
-			twitter: "",
-			linkedIn: "",
-			facebook: "",
-			instagram: "",
-			telegram: "",
-			homeTitle: "",
-			homeSubTitle: "",
-			contactTitle: "",
-			contactSubTitle: "",
-			email: "",
-			phone: "",
+			headerLogo: "/images/black.png",
+			headerDarkLogo: "/images/white.png",
+			footerLogo: "/images/black.png",
+			footerDarkLogo: "/images/white.png",
+			description:
+				"ما در بلاگیسم فضایی برای به اشتراک‌گذاری ایده‌ها، تجربیات و دانش ایجاد کرده‌ایم. هدف ما انتشار محتوای ارزشمند و الهام‌بخش برای خوانندگان است. شما نیز می‌توانید با ما همراه شوید و دیدگاه‌های خود را به اشتراک بگذارید!",
+			twitter: "blogism",
+			linkedIn: "blogism",
+			facebook: "blogism",
+			instagram: "blogism",
+			telegram: "blogism",
+			siteName: "بلاگیسم",
+			homeTitle: "بلاگیسم",
+			homeSubTitle: "برترین پلتفرم فارسی زبان برای انتشار محتوا و مقالات شما",
+			contactTitle: "تماس با ما",
+			contactSubTitle: "جهت ارتباط با ما لطفا پیام خود را ارسال فرمایید",
+			email: "support@blogism.com",
+			phone: "09123456789",
 		},
 	});
 
-	const category = await prisma.category.upsert({
-		where: {
-			id: 1,
-		},
-		update: {},
-		create: {
-			title: "دسته بندی",
-			slug: "دسته-بندی",
-		},
-	});
-
-	const blog = await prisma.blog.upsert({
-		where: {
-			id: 1,
-		},
-		update: {},
-		create: {
-			title: "مقاله",
-			slug: "مقاله",
-			authorId: 1,
-			categoryId: 1,
-			thumbnail: "/images/test.jpg",
-			shortDescription: "توضیحات کوتاه مقاله",
-			featuredImage: "",
-			content: "<h1>محتوای مقاله</h1>",
-		},
-	});
-
-	console.log({ admin, settings, category, blog });
+	console.log({ admin, settings });
 }
 
 main()

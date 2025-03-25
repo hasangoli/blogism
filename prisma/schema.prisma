@@ -11,13 +11,16 @@ datasource db {
 model Settings {
   id              Int    @id @default(autoincrement())
   headerLogo      String
+  headerDarkLogo  String
   footerLogo      String
+  footerDarkLogo  String
   description     String
   twitter         String
   linkedIn        String
   facebook        String
   instagram       String
   telegram        String
+  siteName        String
   homeTitle       String
   homeSubTitle    String
   contactTitle    String

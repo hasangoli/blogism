@@ -1,8 +1,9 @@
-
+import { Settings } from "@/type";
 import Link from "next/link";
+import { Logo } from "./logo";
+import { MobileNav } from "./mobile-nav";
 import { SearchDialog } from "./search-dialog";
 import { ThemeToggle } from "./theme-toggle";
-import { MobileNav } from "./mobile-nav";
 
 export const menuItems = [
 	{ title: "خانه", url: "/" },
@@ -11,15 +12,20 @@ export const menuItems = [
 	{ title: "تماس با ما", url: "/contact" },
 ];
 
-export const Header = () => {
+export const Header = ({ settings }: { settings: Settings }) => {
 	return (
 		<header className="sticky top-0 bg-background z-50 py-4 border-border border-b-[1px]">
 			<div className="container grid grid-cols-3 items-center">
 				<div className="text-start md:hidden">
-					<MobileNav/>
+					<MobileNav settings={settings} />
 				</div>
 				<div className="md:col-span-2 flex items-center justify-center md:justify-start">
-					<h2>LOGO</h2>
+					<Logo
+						logo={settings?.headerLogo}
+						darkLogo={settings?.headerDarkLogo}
+						name={settings?.siteName}
+						className="h-[30px]"
+					/>
 					<nav className="hidden md:block ms-5 text-sm">
 						<ul className="flex items-center gap-x-3">
 							{menuItems.map(item => (

@@ -5,16 +5,17 @@ import {
 	Sheet,
 	SheetContent,
 	SheetHeader,
-	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { Settings } from "@/type";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { menuItems } from "./header";
+import { Logo } from "./logo";
 
-export const MobileNav = () => {
+export const MobileNav = ({ settings }: { settings: Settings }) => {
 	const pathName = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -31,7 +32,12 @@ export const MobileNav = () => {
 			</SheetTrigger>
 			<SheetContent className="pt-8">
 				<SheetHeader>
-					<SheetTitle className="text-center">LOGO</SheetTitle>
+					<Logo
+						logo={settings?.headerLogo}
+						darkLogo={settings?.headerDarkLogo}
+						name={settings?.siteName}
+						className="h-[30px]"
+					/>
 				</SheetHeader>
 				<nav className="px-4">
 					<ul className="flex flex-col gap-2">

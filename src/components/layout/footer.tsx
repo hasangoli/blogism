@@ -1,5 +1,7 @@
 import { Separator } from "@/components/ui/separator";
+import { Settings } from "@/type";
 import { Github, Instagram, Linkedin, Youtube } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { CategoryItem, CategoryType } from "../blogs/category-item";
@@ -7,7 +9,7 @@ import { CategoryItem, CategoryType } from "../blogs/category-item";
 const data = {
 	logo: "LOGO",
 	about:
-		"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد،",
+		"ما در بلاگیسم فضایی برای به اشتراک‌گذاری ایده‌ها، تجربیات و دانش ایجاد کرده‌ایم. هدف ما انتشار محتوای ارزشمند و الهام‌بخش برای خوانندگان است. شما نیز می‌توانید با ما همراه شوید و دیدگاه‌های خود را به اشتراک بگذارید!",
 	categories: [
 		{ name: "تکنولوژی", slug: "test1" },
 		{ name: "خدمات", slug: "test2" },
@@ -47,12 +49,27 @@ const socialIcon = (key: string) => {
 	}
 };
 
-export const Footer = () => {
+export const Footer = ({ settings }: { settings: Settings; }) => {
+	console.log('settings: ', settings);
+	
 	return (
 		<footer className="container">
 			<div className="grid grid-cols-2 md:grid-cols-10 gap-12 py-12">
 				<div className="col-span-2 md:col-span-10 lg:col-span-3">
-					<h2 className="text-3xl font-extrabold mb-4">{data.logo}</h2>
+					<Link href="/" className="block relative aspect-video h-[50px] mb-4">
+						<Image
+							src="/images/black.png"
+							alt=""
+							fill
+							className="object-contain object-center dark:hidden"
+						/>
+						<Image
+							src="/images/white.png"
+							alt=""
+							fill
+							className="object-contain object-center hidden dark:block"
+						/>
+					</Link>
 					<p className="text-justify text-sm">{data.about}</p>
 				</div>
 				<div className="col-span-2 md:col-span-5 lg:col-span-3">
