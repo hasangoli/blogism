@@ -139,7 +139,7 @@ exports.Prisma.BlogScalarFieldEnum = {
   id: 'id',
   title: 'title',
   slug: 'slug',
-  authorId: 'authorId',
+  userId: 'userId',
   categoryId: 'categoryId',
   thumbnail: 'thumbnail',
   shortDescription: 'shortDescription',
@@ -156,10 +156,11 @@ exports.Prisma.CategoryScalarFieldEnum = {
   slug: 'slug'
 };
 
-exports.Prisma.AuthorScalarFieldEnum = {
+exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
   password: 'password',
+  type: 'type',
   fullName: 'fullName',
   avatar: 'avatar',
   description: 'description',
@@ -179,13 +180,17 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-
+exports.UserType = exports.$Enums.UserType = {
+  ADMIN: 'ADMIN',
+  AUTHOR: 'AUTHOR',
+  USER: 'USER'
+};
 
 exports.Prisma.ModelName = {
   Settings: 'Settings',
   Blog: 'Blog',
   Category: 'Category',
-  Author: 'Author'
+  User: 'User'
 };
 
 /**

@@ -25,7 +25,7 @@ CREATE TABLE "Blog" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "title" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
-    "authorId" INTEGER NOT NULL,
+    "userId" INTEGER NOT NULL,
     "categoryId" INTEGER NOT NULL,
     "thumbnail" TEXT NOT NULL,
     "shortDescription" TEXT NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE "Blog" (
     "views" INTEGER NOT NULL DEFAULT 0,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
-    CONSTRAINT "Blog_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "Author" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Blog_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Blog_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
@@ -46,10 +46,11 @@ CREATE TABLE "Category" (
 );
 
 -- CreateTable
-CREATE TABLE "Author" (
+CREATE TABLE "User" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
+    "type" TEXT NOT NULL DEFAULT 'USER',
     "fullName" TEXT,
     "avatar" TEXT,
     "description" TEXT,
@@ -61,4 +62,4 @@ CREATE TABLE "Author" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Author_email_key" ON "Author"("email");
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
