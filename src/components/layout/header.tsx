@@ -1,16 +1,10 @@
+import { links } from "@/constants";
 import { Settings } from "@/type";
 import Link from "next/link";
 import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
 import { SearchDialog } from "./search-dialog";
 import { ThemeToggle } from "./theme-toggle";
-
-export const menuItems = [
-	{ title: "خانه", url: "/" },
-	{ title: "مقالات", url: "/blogs" },
-	{ title: "نویسندگان", url: "/authors" },
-	{ title: "تماس با ما", url: "/contact" },
-];
 
 export const Header = ({ settings }: { settings: Settings }) => {
 	return (
@@ -28,9 +22,9 @@ export const Header = ({ settings }: { settings: Settings }) => {
 					/>
 					<nav className="hidden md:block ms-5 text-sm">
 						<ul className="flex items-center gap-x-3">
-							{menuItems.map(item => (
-								<li key={item.url}>
-									<Link href={item.url}>{item.title}</Link>
+							{links.map(link => (
+								<li key={link.url}>
+									<Link href={link.url}>{link.title}</Link>
 								</li>
 							))}
 						</ul>

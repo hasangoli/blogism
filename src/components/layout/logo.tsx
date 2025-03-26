@@ -11,7 +11,7 @@ type Props = {
 
 export const Logo = ({ logo, darkLogo, name, className }: Props) => {
 	return (
-		<Link href="/" className={cn("relative aspect-video", className)}>
+		<Link href="/" className={cn("block relative aspect-video", className)}>
 			<Image
 				src={logo}
 				alt={name}

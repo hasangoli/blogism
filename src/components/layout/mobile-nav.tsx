@@ -7,12 +7,12 @@ import {
 	SheetHeader,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { links } from "@/constants";
 import { Settings } from "@/type";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { menuItems } from "./header";
 import { Logo } from "./logo";
 
 export const MobileNav = ({ settings }: { settings: Settings }) => {
@@ -41,11 +41,11 @@ export const MobileNav = ({ settings }: { settings: Settings }) => {
 				</SheetHeader>
 				<nav className="px-4">
 					<ul className="flex flex-col gap-2">
-						{menuItems.map(item => (
+						{links.map(link => (
 							<li
-								key={item.url}
+								key={link.url}
 								className="p-2 border-border border-[1px] rounded-md text-sm">
-								<Link href={item.url}>{item.title}</Link>
+								<Link href={link.url}>{link.title}</Link>
 							</li>
 						))}
 						<li className="mt-4">
