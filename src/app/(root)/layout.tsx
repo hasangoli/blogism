@@ -2,7 +2,7 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { NewsLetter } from "@/components/layout/news-letter";
 import { fetchSettings } from "@/lib/api";
-import { Settings } from "@/type";
+import type { Settings } from "../../../generated/prisma";
 import React from "react";
 
 const RootLayout = async ({

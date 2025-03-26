@@ -1,5 +1,4 @@
 // import { Separator } from "@/components/ui/separator";
-import { Settings } from "@/type";
 // import Image from "next/image";
 import Link from "next/link";
 // import { Fragment } from "react";
@@ -7,6 +6,7 @@ import Link from "next/link";
 import { links } from "@/constants";
 import { Facebook, Instagram, Linkedin, Send, Twitter } from "lucide-react";
 import { Logo } from "./logo";
+import { Settings } from "../../../generated/prisma";
 
 export const Footer = ({ settings }: { settings: Settings }) => {
 	return (

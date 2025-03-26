@@ -8,12 +8,12 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { links } from "@/constants";
-import { Settings } from "@/type";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "./logo";
+import { Settings } from "../../../generated/prisma";
 
 export const MobileNav = ({ settings }: { settings: Settings }) => {
 	const pathName = usePathname();

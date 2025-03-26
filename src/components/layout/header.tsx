@@ -1,10 +1,10 @@
 import { links } from "@/constants";
-import { Settings } from "@/type";
 import Link from "next/link";
 import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
 import { SearchDialog } from "./search-dialog";
 import { ThemeToggle } from "./theme-toggle";
+import { Settings } from "../../../generated/prisma";
 
 export const Header = ({ settings }: { settings: Settings }) => {
 	return (
