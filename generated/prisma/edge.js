@@ -184,7 +184,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "rhel-openssl-3.0.x",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
@@ -203,6 +203,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
