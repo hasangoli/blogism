@@ -1,8 +1,14 @@
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
+import { prisma } from "./lib/prisma";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+	pages: {
+		signIn: "/auth",
+	},
+	adapter: PrismaAdapter(prisma),
 	providers: [
 		Google,
 		Credentials({
@@ -11,14 +17,18 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 				password: {},
 			},
 			authorize: async credentials => {
-				console.log(credentials);
 				let user = null;
 
-				// const pwHash = saltAndHashPassword(credentials.password)
-				const pwHash = "skjdfo89cnur8u3cow";
-
-				// user = await getUserFromDb(credentials.email, pwHash)
-				user = { password: pwHash, email: "" };
+				if (credentials.email && credentials.password) {
+					if (
+						credentials.email === "admin@blogism.com" &&
+						credentials.password === "12345678"
+					) {
+						user = prisma.user.findUnique({
+							where: { email: credentials.email },
+						});
+					}
+				}
 
 				if (!user) {
 					throw new Error("Invalid credentials.");

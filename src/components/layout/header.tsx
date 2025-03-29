@@ -5,6 +5,7 @@ import { MobileNav } from "./mobile-nav";
 import { SearchDialog } from "./search-dialog";
 import { ThemeToggle } from "./theme-toggle";
 import { Settings } from "../../../generated/prisma";
+import { Button } from "../ui/button";
 
 export const Header = ({ settings }: { settings: Settings }) => {
 	return (
@@ -31,6 +32,7 @@ export const Header = ({ settings }: { settings: Settings }) => {
 					</nav>
 				</div>
 				<div className="flex items-center justify-end">
+					<Button>auth</Button>
 					<SearchDialog />
 					<ThemeToggle />
 				</div>
