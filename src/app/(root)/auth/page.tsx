@@ -9,6 +9,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { googleLogIn } from "@/lib/api";
+import Image from "next/image";
 
 const AuthPage = () => {
 	return (
@@ -21,8 +23,23 @@ const AuthPage = () => {
 				<TabsContent value="logIn">
 					<Card>
 						<CardHeader>
+							<form action={googleLogIn} className="mb-8">
+								<Button
+									type="submit"
+									variant="outline"
+									className="w-full py-5 text-lg">
+									ورود با گوگل
+									<Image
+										src="/images/google.svg"
+										alt="google"
+										width={20}
+										height={20}
+									/>
+								</Button>
+							</form>
 							<CardDescription>
-								جهت ورود به حساب کاربری، لطفا آدرس ایمیل و رمز عبور خود را وارد کنید
+								جهت ورود به حساب کاربری، لطفا آدرس ایمیل و رمز عبور خود را وارد
+								کنید
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="space-y-2">
@@ -43,6 +60,20 @@ const AuthPage = () => {
 				<TabsContent value="signUp">
 					<Card>
 						<CardHeader>
+							<form action={googleLogIn} className="mb-8">
+								<Button
+									type="submit"
+									variant="outline"
+									className="w-full py-5 text-lg">
+									ثبت نام با گوگل
+									<Image
+										src="/images/google.svg"
+										alt="google"
+										width={20}
+										height={20}
+									/>
+								</Button>
+							</form>
 							<CardDescription>
 								جهت ثبت نام، لطفا آدرس ایمیل و رمز دلخواه خود را وارد کنید
 							</CardDescription>
