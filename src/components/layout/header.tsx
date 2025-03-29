@@ -1,11 +1,12 @@
 import { links } from "@/constants";
+import { CircleUserRound } from "lucide-react";
 import Link from "next/link";
+import { Settings } from "../../../generated/prisma";
+import { Button } from "../ui/button";
 import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
 import { SearchDialog } from "./search-dialog";
 import { ThemeToggle } from "./theme-toggle";
-import { Settings } from "../../../generated/prisma";
-import { Button } from "../ui/button";
 
 export const Header = ({ settings }: { settings: Settings }) => {
 	return (
@@ -31,10 +32,14 @@ export const Header = ({ settings }: { settings: Settings }) => {
 						</ul>
 					</nav>
 				</div>
-				<div className="flex items-center justify-end">
-					<Button>auth</Button>
+				<div className="flex gap-x-1 items-center justify-end">
 					<SearchDialog />
 					<ThemeToggle />
+					<Button asChild>
+						<Link href="/auth">
+							<CircleUserRound />
+						</Link>
+					</Button>
 				</div>
 			</div>
 		</header>
