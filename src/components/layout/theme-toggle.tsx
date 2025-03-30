@@ -4,14 +4,30 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
-	const { theme, setTheme } = useTheme();
+	const { setTheme } = useTheme();
+	const [currentTheme, setCurrentTheme] = useState<string | undefined>(
+		undefined
+	);
+
+	useEffect(() => {
+		setCurrentTheme(document.documentElement.getAttribute("class") as string);
+	}, []);
 
 	const toggleTheme = () => {
-		if (theme === "dark") setTheme("light");
-		if (theme === "light") setTheme("dark");
+		if (currentTheme === "dark") {
+			setTheme("light");
+			setCurrentTheme("light");
+		}
+		if (currentTheme === "light") {
+			setTheme("dark");
+			setCurrentTheme("dark");
+		}
 	};
+
+	console.log("currentTheme: ", currentTheme);
 
 	return (
 		<Button variant="ghost" size="icon" onClick={toggleTheme}>
