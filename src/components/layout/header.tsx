@@ -1,5 +1,5 @@
 import { links } from "@/constants";
-import { CircleUserRound } from "lucide-react";
+import { googleLogIn } from "@/lib/api";
 import Link from "next/link";
 import { Settings } from "../../../generated/prisma";
 import { Button } from "../ui/button";
@@ -35,11 +35,9 @@ export const Header = ({ settings }: { settings: Settings }) => {
 				<div className="flex gap-x-1 items-center justify-end">
 					<SearchDialog />
 					<ThemeToggle />
-					<Button asChild>
-						<Link href="/auth">
-							<CircleUserRound />
-						</Link>
-					</Button>
+					<form action={googleLogIn}>
+						<Button>ورود</Button>
+					</form>
 				</div>
 			</div>
 		</header>
