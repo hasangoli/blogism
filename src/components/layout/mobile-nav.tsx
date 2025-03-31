@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
 	Sheet,
 	SheetContent,
-	SheetHeader,
+	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { links } from "@/constants";
@@ -12,8 +12,8 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Logo } from "./logo";
 import { Settings } from "../../../generated/prisma";
+import { Logo } from "./logo";
 
 export const MobileNav = ({ settings }: { settings: Settings }) => {
 	const pathName = usePathname();
@@ -31,14 +31,14 @@ export const MobileNav = ({ settings }: { settings: Settings }) => {
 				</Button>
 			</SheetTrigger>
 			<SheetContent className="pt-8">
-				<SheetHeader>
+				<SheetTitle className="flex justify-center p-4">
 					<Logo
 						logo={settings?.headerLogo}
 						darkLogo={settings?.headerDarkLogo}
 						name={settings?.siteName}
-						className="h-[30px]"
+						className="h-[40px]"
 					/>
-				</SheetHeader>
+				</SheetTitle>
 				<nav className="px-4">
 					<ul className="flex flex-col gap-2">
 						{links.map(link => (

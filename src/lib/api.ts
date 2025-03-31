@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 import { prisma } from "./prisma";
 
 export const fetchSettings = async () => {
@@ -10,5 +10,9 @@ export const fetchSettings = async () => {
 };
 
 export const googleLogIn = async () => {
-	await signIn("google");
+	await signIn("google", { redirectTo: "/dashboard" });
+};
+
+export const googleLogOut = async () => {
+	await signOut({ redirectTo: "/" });
 };
