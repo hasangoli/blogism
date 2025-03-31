@@ -1,9 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
@@ -26,8 +25,6 @@ export const ThemeToggle = () => {
 			setCurrentTheme("dark");
 		}
 	};
-
-	console.log("currentTheme: ", currentTheme);
 
 	return (
 		<Button variant="ghost" size="icon" onClick={toggleTheme}>
