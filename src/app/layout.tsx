@@ -1,6 +1,8 @@
+import { Toaster } from "@/components/ui/sonner";
 import Providers from "@/providers";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ReactNode } from "react";
 import "./globals.css";
 
 const iranSans = localFont({
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children,
 }: Readonly<{
-	children: React.ReactNode;
+	children: ReactNode;
 }>) {
 	return (
 		<html lang="fa" dir="rtl" suppressHydrationWarning>
@@ -29,6 +31,7 @@ export default function RootLayout({
 					disableTransitionOnChange>
 					{children}
 				</Providers>
+				<Toaster />
 			</body>
 		</html>
 	);
