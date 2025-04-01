@@ -34,7 +34,6 @@ CREATE TABLE "Blog" (
     "views" INTEGER NOT NULL DEFAULT 0,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
-    CONSTRAINT "Blog_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Blog_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
@@ -48,17 +47,12 @@ CREATE TABLE "Category" (
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
-    "type" TEXT NOT NULL DEFAULT 'USER',
-    "fullName" TEXT,
-    "avatar" TEXT,
-    "description" TEXT,
-    "twitter" TEXT NOT NULL,
-    "linkedIn" TEXT NOT NULL,
-    "facebook" TEXT NOT NULL,
-    "instagram" TEXT NOT NULL,
-    "telegram" TEXT NOT NULL
+    "name" TEXT,
+    "email" TEXT,
+    "emailVerified" DATETIME,
+    "image" TEXT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
 );
 
 -- CreateTable

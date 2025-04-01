@@ -8,13 +8,13 @@ export const { signIn, signOut, auth, handlers } = NextAuth({
 	providers: [Google],
 	callbacks: {
 		async session({ session, token, user }) {
-			const userData = await prisma.user.findFirst({
-				where: { email: session?.user?.email },
-			});
+			// const userData = await prisma.user.findFirst({
+			// 	where: { email: session?.user?.email },
+			// });
 			console.log("======== session: ", session);
 			console.log("======== token: ", token);
 			console.log("======== user: ", user);
-			console.log("======== userData: ", userData);
+			// console.log("======== userData: ", userData);
 
 			return session;
 		},

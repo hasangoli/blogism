@@ -3,20 +3,6 @@ import { PrismaClient } from "./generated/prisma";
 const prisma = new PrismaClient();
 
 async function main() {
-	await prisma.user.create({
-		data: {
-			email: "admin@blogism.com",
-			type: "ADMIN",
-			fullName: "ادمین",
-			description: "درباره ادمین",
-			twitter: "https://twitter.com/admin",
-			linkedIn: "https://linkedin.com/admin",
-			facebook: "https://facebook.com/admin",
-			instagram: "https://instagram.com/admin",
-			telegram: "https://telegram.com/admin",
-		},
-	});
-
 	await prisma.settings.create({
 		data: {
 			headerLogo: "/images/black.png",
@@ -43,7 +29,7 @@ async function main() {
 
 main()
 	.then(async () => {
-		console.log("Admin and settings seeded!");
+		console.log("Settings seeded!");
 		await prisma.$disconnect();
 	})
 	.catch(async e => {

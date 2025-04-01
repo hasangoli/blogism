@@ -56,26 +56,29 @@ model Category {
   id    Int    @id @default(autoincrement())
   title String
   slug  String
-  Blogs Blog[]
+  blogs Blog[]
 }
 
 model User {
-  id    String   @id @default(cuid())
-  email String   @unique
-  type  UserType @default(USER)
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
 
-  fullName    String?
-  avatar      String?
+  type        UserType @default(USER)
   description String?
-  twitter     String
-  linkedIn    String
-  facebook    String
-  instagram   String
-  telegram    String
+  twitter     String?
+  linkedIn    String?
+  facebook    String?
+  instagram   String?
+  telegram    String?
+  blogs       Blog[]
 
-  blogs   Blog[]
-  account Account[]
-  session Session[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Account {
