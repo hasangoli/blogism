@@ -22,15 +22,5 @@ export const { signIn, signOut, auth, handlers } = NextAuth({
 				},
 			};
 		},
-		// async redirect({ url, baseUrl }) {
-		// 	console.log("url", url);
-		// 	console.log("baseUrl", baseUrl);
-
-		// 	return url.startsWith(baseUrl) ? url : baseUrl + "/protected/client";
-		// },
-		// authorized: async ({ auth }) => {
-		// 	// Logged in users are authenticated, otherwise redirect to login page
-		// 	return !!auth;
-		// },
 	},
 });

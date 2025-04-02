@@ -10,7 +10,7 @@ export const fetchSettings = async () => {
 };
 
 export const googleLogIn = async () => {
-	await signIn("google");
+	await signIn("google", { redirectTo: "/dashboard" });
 };
 
 export const googleLogOut = async () => {
