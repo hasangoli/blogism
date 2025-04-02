@@ -1,5 +1,5 @@
-const UserDashboard = async () => {
-	return <div>UserDashboard</div>;
+const UserDashboardPage = async () => {
+	return <div>UserDashboardPage</div>;
 };
 
-export default UserDashboard;
+export default UserDashboardPage;
