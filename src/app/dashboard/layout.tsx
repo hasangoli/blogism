@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
+import { NoAuthSection } from "@/components/no-auth-section";
 import { Session } from "next-auth";
-import { redirect } from "next/navigation";
 import { ReactNode } from "react";
 
 const DashboardLayout = async ({
@@ -8,9 +8,9 @@ const DashboardLayout = async ({
 }: Readonly<{
 	children: ReactNode;
 }>) => {
-	const session = await auth() as Session;
+	const session = (await auth()) as Session;
 
-	if (!session || !session?.user) redirect("/login");
+	if (!session) return <NoAuthSection />;
 
 	return <main>{children}</main>;
 };

@@ -1,14 +1,5 @@
-import { auth } from "@/auth";
-import { Session } from "next-auth";
-import React from 'react'
+const UserDashboard = async () => {
+	return <div>UserDashboard</div>;
+};
 
-const UserDashboard = async() => {
-  const session = (await auth()) as Session;
-
-  console.log('session: ', session)
-  return (
-    <div>UserDashboard</div>
-  )
-}
-
-export default UserDashboard
+export default UserDashboard;
