@@ -19,13 +19,13 @@ import { z } from "zod";
 import { User } from "../../../../../generated/prisma";
 
 export const ProfileForm = ({ user }: { user: User }) => {
-	console.log(user);
+	const formData = new FormData();
 
 	const form = useForm<z.infer<typeof profileSchema>>({
 		resolver: zodResolver(profileSchema),
 		defaultValues: {
 			name: user?.name || "",
-			image: "",
+			image: undefined,
 			description: user?.description || "",
 			twitter: user?.twitter || "",
 			linkedIn: user?.linkedIn || "",
@@ -36,7 +36,6 @@ export const ProfileForm = ({ user }: { user: User }) => {
 	});
 
 	const onSubmit = (values: z.infer<typeof profileSchema>) => {
-		const formData = new FormData();
 		for (const [key, value] of Object.entries(values)) {
 			formData.append(key, value);
 		}
@@ -71,14 +70,16 @@ export const ProfileForm = ({ user }: { user: User }) => {
 					<FormField
 						control={form.control}
 						name="image"
-						render={({ field: { onChange } }) => (
+						render={({ field }) => (
 							<FormItem>
 								<FormLabel>تصویر پروفایل</FormLabel>
 								<FormControl>
 									<Input
 										type="file"
 										accept="*/image"
-										onChange={onChange}
+										{...field}
+										value={field?.value?.name}
+										onChange={e => field.onChange(e.currentTarget.files)}
 									/>
 								</FormControl>
 								<FormMessage />

@@ -19,6 +19,8 @@ export const googleLogOut = async () => {
 };
 
 // Dashboard Actions
-export const updateProfile = async (data: Partial<User>) => {
+export const updateProfile = async (
+	data: Partial<Omit<User, "image"> & { image?: File }>
+) => {
 	console.log(data);
 };
