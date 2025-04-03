@@ -46,12 +46,28 @@ export const AppSidebar = ({ settings, session }: Props) => {
 	return (
 		<Sidebar side="right" variant="floating" collapsible="icon">
 			<SidebarHeader>
-				<Logo
-					logo={settings?.headerLogo}
-					darkLogo={settings?.headerDarkLogo}
-					name={settings?.siteName}
-					className="w-full"
-				/>
+				<SidebarMenuButton
+					size="lg"
+					className="h-auto group-data-[collapsible=icon]:hidden">
+					<Logo
+						logo={settings?.headerLogo}
+						darkLogo={settings?.headerDarkLogo}
+						name={settings?.siteName}
+						className="w-[100px] mx-auto max-w-full"
+						target="_blank"
+					/>
+				</SidebarMenuButton>
+				<SidebarMenuButton
+					size="lg"
+					className="h-auto hidden group-data-[collapsible=icon]:block">
+					<Logo
+						logo={settings?.smallLogo}
+						darkLogo={settings?.smallDarkLogo}
+						name={settings?.siteName}
+						className="max-w-full"
+						target="_blank"
+					/>
+				</SidebarMenuButton>
 				<hr />
 			</SidebarHeader>
 			<SidebarContent>
@@ -81,41 +97,34 @@ export const AppSidebar = ({ settings, session }: Props) => {
 				</SidebarGroup>
 			</SidebarContent>
 			<SidebarFooter>
-				<SidebarMenu>
-					<SidebarMenuItem>
-						<SidebarMenuButton
-							size="lg"
-							className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-							<Avatar className="h-8 w-8 rounded-full">
-								{session?.user?.image && session?.user?.name ? (
-									<Image
-										src={session?.user?.image}
-										alt={session?.user?.name}
-										width={40}
-										height={40}
-									/>
-								) : (
-									<AvatarFallback>
-										<Image
-											src="/images/avatar.png"
-											alt=""
-											width={40}
-											height={40}
-										/>
-									</AvatarFallback>
-								)}
-							</Avatar>
-							<div className="grid flex-1 text-start text-sm leading-tight">
-								<span className="truncate font-medium">
-									{session?.user?.name}
-								</span>
-								<span className="truncate text-xs text-muted-foreground">
-									{session?.user?.email}
-								</span>
-							</div>
-						</SidebarMenuButton>
-					</SidebarMenuItem>
-				</SidebarMenu>
+				{/* <SidebarMenu> */}
+				{/* <SidebarMenuItem> */}
+				<SidebarMenuButton
+					size="lg"
+					className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
+					<Avatar className="h-8 w-8 rounded-full">
+						{session?.user?.image && session?.user?.name ? (
+							<Image
+								src={session?.user?.image}
+								alt={session?.user?.name}
+								width={40}
+								height={40}
+							/>
+						) : (
+							<AvatarFallback>
+								<Image src="/images/avatar.png" alt="" width={40} height={40} />
+							</AvatarFallback>
+						)}
+					</Avatar>
+					<div className="grid flex-1 text-start text-sm leading-tight">
+						<span className="truncate font-medium">{session?.user?.name}</span>
+						<span className="truncate text-xs text-muted-foreground">
+							{session?.user?.email}
+						</span>
+					</div>
+				</SidebarMenuButton>
+				{/* </SidebarMenuItem> */}
+				{/* </SidebarMenu> */}
 			</SidebarFooter>
 		</Sidebar>
 	);

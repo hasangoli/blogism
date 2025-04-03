@@ -5,6 +5,9 @@ const prisma = new PrismaClient();
 async function main() {
 	await prisma.settings.create({
 		data: {
+			favIcon: "/images/favicon.ico",
+			smallLogo: "/images/small-black.png",
+			smallDarkLogo: "/images/small-white.png",
 			headerLogo: "/images/black.png",
 			headerDarkLogo: "/images/white.png",
 			footerLogo: "/images/black.png",

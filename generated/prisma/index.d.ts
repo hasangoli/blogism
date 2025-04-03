@@ -1534,6 +1534,9 @@ export namespace Prisma {
 
   export type SettingsMinAggregateOutputType = {
     id: number | null
+    favIcon: string | null
+    smallLogo: string | null
+    smallDarkLogo: string | null
     headerLogo: string | null
     headerDarkLogo: string | null
     footerLogo: string | null
@@ -1555,6 +1558,9 @@ export namespace Prisma {
 
   export type SettingsMaxAggregateOutputType = {
     id: number | null
+    favIcon: string | null
+    smallLogo: string | null
+    smallDarkLogo: string | null
     headerLogo: string | null
     headerDarkLogo: string | null
     footerLogo: string | null
@@ -1576,6 +1582,9 @@ export namespace Prisma {
 
   export type SettingsCountAggregateOutputType = {
     id: number
+    favIcon: number
+    smallLogo: number
+    smallDarkLogo: number
     headerLogo: number
     headerDarkLogo: number
     footerLogo: number
@@ -1607,6 +1616,9 @@ export namespace Prisma {
 
   export type SettingsMinAggregateInputType = {
     id?: true
+    favIcon?: true
+    smallLogo?: true
+    smallDarkLogo?: true
     headerLogo?: true
     headerDarkLogo?: true
     footerLogo?: true
@@ -1628,6 +1640,9 @@ export namespace Prisma {
 
   export type SettingsMaxAggregateInputType = {
     id?: true
+    favIcon?: true
+    smallLogo?: true
+    smallDarkLogo?: true
     headerLogo?: true
     headerDarkLogo?: true
     footerLogo?: true
@@ -1649,6 +1664,9 @@ export namespace Prisma {
 
   export type SettingsCountAggregateInputType = {
     id?: true
+    favIcon?: true
+    smallLogo?: true
+    smallDarkLogo?: true
     headerLogo?: true
     headerDarkLogo?: true
     footerLogo?: true
@@ -1757,6 +1775,9 @@ export namespace Prisma {
 
   export type SettingsGroupByOutputType = {
     id: number
+    favIcon: string
+    smallLogo: string
+    smallDarkLogo: string
     headerLogo: string
     headerDarkLogo: string
     footerLogo: string
@@ -1797,6 +1818,9 @@ export namespace Prisma {
 
   export type SettingsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    favIcon?: boolean
+    smallLogo?: boolean
+    smallDarkLogo?: boolean
     headerLogo?: boolean
     headerDarkLogo?: boolean
     footerLogo?: boolean
@@ -1818,6 +1842,9 @@ export namespace Prisma {
 
   export type SettingsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    favIcon?: boolean
+    smallLogo?: boolean
+    smallDarkLogo?: boolean
     headerLogo?: boolean
     headerDarkLogo?: boolean
     footerLogo?: boolean
@@ -1839,6 +1866,9 @@ export namespace Prisma {
 
   export type SettingsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    favIcon?: boolean
+    smallLogo?: boolean
+    smallDarkLogo?: boolean
     headerLogo?: boolean
     headerDarkLogo?: boolean
     footerLogo?: boolean
@@ -1860,6 +1890,9 @@ export namespace Prisma {
 
   export type SettingsSelectScalar = {
     id?: boolean
+    favIcon?: boolean
+    smallLogo?: boolean
+    smallDarkLogo?: boolean
     headerLogo?: boolean
     headerDarkLogo?: boolean
     footerLogo?: boolean
@@ -1879,13 +1912,16 @@ export namespace Prisma {
     phone?: boolean
   }
 
-  export type SettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "headerLogo" | "headerDarkLogo" | "footerLogo" | "footerDarkLogo" | "description" | "twitter" | "linkedIn" | "facebook" | "instagram" | "telegram" | "siteName" | "homeTitle" | "homeSubTitle" | "contactTitle" | "contactSubTitle" | "email" | "phone", ExtArgs["result"]["settings"]>
+  export type SettingsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "favIcon" | "smallLogo" | "smallDarkLogo" | "headerLogo" | "headerDarkLogo" | "footerLogo" | "footerDarkLogo" | "description" | "twitter" | "linkedIn" | "facebook" | "instagram" | "telegram" | "siteName" | "homeTitle" | "homeSubTitle" | "contactTitle" | "contactSubTitle" | "email" | "phone", ExtArgs["result"]["settings"]>
 
   export type $SettingsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Settings"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      favIcon: string
+      smallLogo: string
+      smallDarkLogo: string
       headerLogo: string
       headerDarkLogo: string
       footerLogo: string
@@ -2327,6 +2363,9 @@ export namespace Prisma {
    */ 
   interface SettingsFieldRefs {
     readonly id: FieldRef<"Settings", 'Int'>
+    readonly favIcon: FieldRef<"Settings", 'String'>
+    readonly smallLogo: FieldRef<"Settings", 'String'>
+    readonly smallDarkLogo: FieldRef<"Settings", 'String'>
     readonly headerLogo: FieldRef<"Settings", 'String'>
     readonly headerDarkLogo: FieldRef<"Settings", 'String'>
     readonly footerLogo: FieldRef<"Settings", 'String'>
@@ -2721,26 +2760,26 @@ export namespace Prisma {
   }
 
   export type BlogAvgAggregateOutputType = {
-    categoryId: number | null
     views: number | null
+    categoryId: number | null
   }
 
   export type BlogSumAggregateOutputType = {
-    categoryId: number | null
     views: number | null
+    categoryId: number | null
   }
 
   export type BlogMinAggregateOutputType = {
     id: string | null
     title: string | null
     slug: string | null
-    userId: string | null
-    categoryId: number | null
     thumbnail: string | null
     shortDescription: string | null
     featuredImage: string | null
     content: string | null
     views: number | null
+    userId: string | null
+    categoryId: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2749,13 +2788,13 @@ export namespace Prisma {
     id: string | null
     title: string | null
     slug: string | null
-    userId: string | null
-    categoryId: number | null
     thumbnail: string | null
     shortDescription: string | null
     featuredImage: string | null
     content: string | null
     views: number | null
+    userId: string | null
+    categoryId: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2764,13 +2803,13 @@ export namespace Prisma {
     id: number
     title: number
     slug: number
-    userId: number
-    categoryId: number
     thumbnail: number
     shortDescription: number
     featuredImage: number
     content: number
     views: number
+    userId: number
+    categoryId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -2778,26 +2817,26 @@ export namespace Prisma {
 
 
   export type BlogAvgAggregateInputType = {
-    categoryId?: true
     views?: true
+    categoryId?: true
   }
 
   export type BlogSumAggregateInputType = {
-    categoryId?: true
     views?: true
+    categoryId?: true
   }
 
   export type BlogMinAggregateInputType = {
     id?: true
     title?: true
     slug?: true
-    userId?: true
-    categoryId?: true
     thumbnail?: true
     shortDescription?: true
     featuredImage?: true
     content?: true
     views?: true
+    userId?: true
+    categoryId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2806,13 +2845,13 @@ export namespace Prisma {
     id?: true
     title?: true
     slug?: true
-    userId?: true
-    categoryId?: true
     thumbnail?: true
     shortDescription?: true
     featuredImage?: true
     content?: true
     views?: true
+    userId?: true
+    categoryId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2821,13 +2860,13 @@ export namespace Prisma {
     id?: true
     title?: true
     slug?: true
-    userId?: true
-    categoryId?: true
     thumbnail?: true
     shortDescription?: true
     featuredImage?: true
     content?: true
     views?: true
+    userId?: true
+    categoryId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -2923,13 +2962,13 @@ export namespace Prisma {
     id: string
     title: string
     slug: string
-    userId: string
-    categoryId: number
     thumbnail: string
     shortDescription: string
     featuredImage: string | null
     content: string
     views: number
+    userId: string
+    categoryId: number
     createdAt: Date
     updatedAt: Date
     _count: BlogCountAggregateOutputType | null
@@ -2957,13 +2996,13 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     slug?: boolean
-    userId?: boolean
-    categoryId?: boolean
     thumbnail?: boolean
     shortDescription?: boolean
     featuredImage?: boolean
     content?: boolean
     views?: boolean
+    userId?: boolean
+    categoryId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2974,13 +3013,13 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     slug?: boolean
-    userId?: boolean
-    categoryId?: boolean
     thumbnail?: boolean
     shortDescription?: boolean
     featuredImage?: boolean
     content?: boolean
     views?: boolean
+    userId?: boolean
+    categoryId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2991,13 +3030,13 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     slug?: boolean
-    userId?: boolean
-    categoryId?: boolean
     thumbnail?: boolean
     shortDescription?: boolean
     featuredImage?: boolean
     content?: boolean
     views?: boolean
+    userId?: boolean
+    categoryId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -3008,18 +3047,18 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     slug?: boolean
-    userId?: boolean
-    categoryId?: boolean
     thumbnail?: boolean
     shortDescription?: boolean
     featuredImage?: boolean
     content?: boolean
     views?: boolean
+    userId?: boolean
+    categoryId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type BlogOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "slug" | "userId" | "categoryId" | "thumbnail" | "shortDescription" | "featuredImage" | "content" | "views" | "createdAt" | "updatedAt", ExtArgs["result"]["blog"]>
+  export type BlogOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "slug" | "thumbnail" | "shortDescription" | "featuredImage" | "content" | "views" | "userId" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["blog"]>
   export type BlogInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     category?: boolean | CategoryDefaultArgs<ExtArgs>
@@ -3043,13 +3082,13 @@ export namespace Prisma {
       id: string
       title: string
       slug: string
-      userId: string
-      categoryId: number
       thumbnail: string
       shortDescription: string
       featuredImage: string | null
       content: string
       views: number
+      userId: string
+      categoryId: number
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["blog"]>
@@ -3480,13 +3519,13 @@ export namespace Prisma {
     readonly id: FieldRef<"Blog", 'String'>
     readonly title: FieldRef<"Blog", 'String'>
     readonly slug: FieldRef<"Blog", 'String'>
-    readonly userId: FieldRef<"Blog", 'String'>
-    readonly categoryId: FieldRef<"Blog", 'Int'>
     readonly thumbnail: FieldRef<"Blog", 'String'>
     readonly shortDescription: FieldRef<"Blog", 'String'>
     readonly featuredImage: FieldRef<"Blog", 'String'>
     readonly content: FieldRef<"Blog", 'String'>
     readonly views: FieldRef<"Blog", 'Int'>
+    readonly userId: FieldRef<"Blog", 'String'>
+    readonly categoryId: FieldRef<"Blog", 'Int'>
     readonly createdAt: FieldRef<"Blog", 'DateTime'>
     readonly updatedAt: FieldRef<"Blog", 'DateTime'>
   }
@@ -7438,8 +7477,8 @@ export namespace Prisma {
   export type SessionMinAggregateOutputType = {
     id: string | null
     sessionToken: string | null
-    userId: string | null
     expires: Date | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -7447,8 +7486,8 @@ export namespace Prisma {
   export type SessionMaxAggregateOutputType = {
     id: string | null
     sessionToken: string | null
-    userId: string | null
     expires: Date | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -7456,8 +7495,8 @@ export namespace Prisma {
   export type SessionCountAggregateOutputType = {
     id: number
     sessionToken: number
-    userId: number
     expires: number
+    userId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -7467,8 +7506,8 @@ export namespace Prisma {
   export type SessionMinAggregateInputType = {
     id?: true
     sessionToken?: true
-    userId?: true
     expires?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -7476,8 +7515,8 @@ export namespace Prisma {
   export type SessionMaxAggregateInputType = {
     id?: true
     sessionToken?: true
-    userId?: true
     expires?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -7485,8 +7524,8 @@ export namespace Prisma {
   export type SessionCountAggregateInputType = {
     id?: true
     sessionToken?: true
-    userId?: true
     expires?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -7567,8 +7606,8 @@ export namespace Prisma {
   export type SessionGroupByOutputType = {
     id: string
     sessionToken: string
-    userId: string
     expires: Date
+    userId: string
     createdAt: Date
     updatedAt: Date
     _count: SessionCountAggregateOutputType | null
@@ -7593,8 +7632,8 @@ export namespace Prisma {
   export type SessionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     sessionToken?: boolean
-    userId?: boolean
     expires?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -7603,8 +7642,8 @@ export namespace Prisma {
   export type SessionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     sessionToken?: boolean
-    userId?: boolean
     expires?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -7613,8 +7652,8 @@ export namespace Prisma {
   export type SessionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     sessionToken?: boolean
-    userId?: boolean
     expires?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -7623,13 +7662,13 @@ export namespace Prisma {
   export type SessionSelectScalar = {
     id?: boolean
     sessionToken?: boolean
-    userId?: boolean
     expires?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type SessionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "sessionToken" | "userId" | "expires" | "createdAt" | "updatedAt", ExtArgs["result"]["session"]>
+  export type SessionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "sessionToken" | "expires" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["session"]>
   export type SessionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -7648,8 +7687,8 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       sessionToken: string
-      userId: string
       expires: Date
+      userId: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["session"]>
@@ -8078,8 +8117,8 @@ export namespace Prisma {
   interface SessionFieldRefs {
     readonly id: FieldRef<"Session", 'String'>
     readonly sessionToken: FieldRef<"Session", 'String'>
-    readonly userId: FieldRef<"Session", 'String'>
     readonly expires: FieldRef<"Session", 'DateTime'>
+    readonly userId: FieldRef<"Session", 'String'>
     readonly createdAt: FieldRef<"Session", 'DateTime'>
     readonly updatedAt: FieldRef<"Session", 'DateTime'>
   }
@@ -9474,6 +9513,9 @@ export namespace Prisma {
 
   export const SettingsScalarFieldEnum: {
     id: 'id',
+    favIcon: 'favIcon',
+    smallLogo: 'smallLogo',
+    smallDarkLogo: 'smallDarkLogo',
     headerLogo: 'headerLogo',
     headerDarkLogo: 'headerDarkLogo',
     footerLogo: 'footerLogo',
@@ -9500,13 +9542,13 @@ export namespace Prisma {
     id: 'id',
     title: 'title',
     slug: 'slug',
-    userId: 'userId',
-    categoryId: 'categoryId',
     thumbnail: 'thumbnail',
     shortDescription: 'shortDescription',
     featuredImage: 'featuredImage',
     content: 'content',
     views: 'views',
+    userId: 'userId',
+    categoryId: 'categoryId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -9566,8 +9608,8 @@ export namespace Prisma {
   export const SessionScalarFieldEnum: {
     id: 'id',
     sessionToken: 'sessionToken',
-    userId: 'userId',
     expires: 'expires',
+    userId: 'userId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -9648,6 +9690,9 @@ export namespace Prisma {
     OR?: SettingsWhereInput[]
     NOT?: SettingsWhereInput | SettingsWhereInput[]
     id?: IntFilter<"Settings"> | number
+    favIcon?: StringFilter<"Settings"> | string
+    smallLogo?: StringFilter<"Settings"> | string
+    smallDarkLogo?: StringFilter<"Settings"> | string
     headerLogo?: StringFilter<"Settings"> | string
     headerDarkLogo?: StringFilter<"Settings"> | string
     footerLogo?: StringFilter<"Settings"> | string
@@ -9669,6 +9714,9 @@ export namespace Prisma {
 
   export type SettingsOrderByWithRelationInput = {
     id?: SortOrder
+    favIcon?: SortOrder
+    smallLogo?: SortOrder
+    smallDarkLogo?: SortOrder
     headerLogo?: SortOrder
     headerDarkLogo?: SortOrder
     footerLogo?: SortOrder
@@ -9693,6 +9741,9 @@ export namespace Prisma {
     AND?: SettingsWhereInput | SettingsWhereInput[]
     OR?: SettingsWhereInput[]
     NOT?: SettingsWhereInput | SettingsWhereInput[]
+    favIcon?: StringFilter<"Settings"> | string
+    smallLogo?: StringFilter<"Settings"> | string
+    smallDarkLogo?: StringFilter<"Settings"> | string
     headerLogo?: StringFilter<"Settings"> | string
     headerDarkLogo?: StringFilter<"Settings"> | string
     footerLogo?: StringFilter<"Settings"> | string
@@ -9714,6 +9765,9 @@ export namespace Prisma {
 
   export type SettingsOrderByWithAggregationInput = {
     id?: SortOrder
+    favIcon?: SortOrder
+    smallLogo?: SortOrder
+    smallDarkLogo?: SortOrder
     headerLogo?: SortOrder
     headerDarkLogo?: SortOrder
     footerLogo?: SortOrder
@@ -9743,6 +9797,9 @@ export namespace Prisma {
     OR?: SettingsScalarWhereWithAggregatesInput[]
     NOT?: SettingsScalarWhereWithAggregatesInput | SettingsScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Settings"> | number
+    favIcon?: StringWithAggregatesFilter<"Settings"> | string
+    smallLogo?: StringWithAggregatesFilter<"Settings"> | string
+    smallDarkLogo?: StringWithAggregatesFilter<"Settings"> | string
     headerLogo?: StringWithAggregatesFilter<"Settings"> | string
     headerDarkLogo?: StringWithAggregatesFilter<"Settings"> | string
     footerLogo?: StringWithAggregatesFilter<"Settings"> | string
@@ -9769,13 +9826,13 @@ export namespace Prisma {
     id?: StringFilter<"Blog"> | string
     title?: StringFilter<"Blog"> | string
     slug?: StringFilter<"Blog"> | string
-    userId?: StringFilter<"Blog"> | string
-    categoryId?: IntFilter<"Blog"> | number
     thumbnail?: StringFilter<"Blog"> | string
     shortDescription?: StringFilter<"Blog"> | string
     featuredImage?: StringNullableFilter<"Blog"> | string | null
     content?: StringFilter<"Blog"> | string
     views?: IntFilter<"Blog"> | number
+    userId?: StringFilter<"Blog"> | string
+    categoryId?: IntFilter<"Blog"> | number
     createdAt?: DateTimeFilter<"Blog"> | Date | string
     updatedAt?: DateTimeFilter<"Blog"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -9786,13 +9843,13 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     slug?: SortOrder
-    userId?: SortOrder
-    categoryId?: SortOrder
     thumbnail?: SortOrder
     shortDescription?: SortOrder
     featuredImage?: SortOrderInput | SortOrder
     content?: SortOrder
     views?: SortOrder
+    userId?: SortOrder
+    categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -9806,13 +9863,13 @@ export namespace Prisma {
     NOT?: BlogWhereInput | BlogWhereInput[]
     title?: StringFilter<"Blog"> | string
     slug?: StringFilter<"Blog"> | string
-    userId?: StringFilter<"Blog"> | string
-    categoryId?: IntFilter<"Blog"> | number
     thumbnail?: StringFilter<"Blog"> | string
     shortDescription?: StringFilter<"Blog"> | string
     featuredImage?: StringNullableFilter<"Blog"> | string | null
     content?: StringFilter<"Blog"> | string
     views?: IntFilter<"Blog"> | number
+    userId?: StringFilter<"Blog"> | string
+    categoryId?: IntFilter<"Blog"> | number
     createdAt?: DateTimeFilter<"Blog"> | Date | string
     updatedAt?: DateTimeFilter<"Blog"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -9823,13 +9880,13 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     slug?: SortOrder
-    userId?: SortOrder
-    categoryId?: SortOrder
     thumbnail?: SortOrder
     shortDescription?: SortOrder
     featuredImage?: SortOrderInput | SortOrder
     content?: SortOrder
     views?: SortOrder
+    userId?: SortOrder
+    categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: BlogCountOrderByAggregateInput
@@ -9846,13 +9903,13 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Blog"> | string
     title?: StringWithAggregatesFilter<"Blog"> | string
     slug?: StringWithAggregatesFilter<"Blog"> | string
-    userId?: StringWithAggregatesFilter<"Blog"> | string
-    categoryId?: IntWithAggregatesFilter<"Blog"> | number
     thumbnail?: StringWithAggregatesFilter<"Blog"> | string
     shortDescription?: StringWithAggregatesFilter<"Blog"> | string
     featuredImage?: StringNullableWithAggregatesFilter<"Blog"> | string | null
     content?: StringWithAggregatesFilter<"Blog"> | string
     views?: IntWithAggregatesFilter<"Blog"> | number
+    userId?: StringWithAggregatesFilter<"Blog"> | string
+    categoryId?: IntWithAggregatesFilter<"Blog"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Blog"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Blog"> | Date | string
   }
@@ -10119,8 +10176,8 @@ export namespace Prisma {
     NOT?: SessionWhereInput | SessionWhereInput[]
     id?: StringFilter<"Session"> | string
     sessionToken?: StringFilter<"Session"> | string
-    userId?: StringFilter<"Session"> | string
     expires?: DateTimeFilter<"Session"> | Date | string
+    userId?: StringFilter<"Session"> | string
     createdAt?: DateTimeFilter<"Session"> | Date | string
     updatedAt?: DateTimeFilter<"Session"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -10129,8 +10186,8 @@ export namespace Prisma {
   export type SessionOrderByWithRelationInput = {
     id?: SortOrder
     sessionToken?: SortOrder
-    userId?: SortOrder
     expires?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -10142,8 +10199,8 @@ export namespace Prisma {
     AND?: SessionWhereInput | SessionWhereInput[]
     OR?: SessionWhereInput[]
     NOT?: SessionWhereInput | SessionWhereInput[]
-    userId?: StringFilter<"Session"> | string
     expires?: DateTimeFilter<"Session"> | Date | string
+    userId?: StringFilter<"Session"> | string
     createdAt?: DateTimeFilter<"Session"> | Date | string
     updatedAt?: DateTimeFilter<"Session"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -10152,8 +10209,8 @@ export namespace Prisma {
   export type SessionOrderByWithAggregationInput = {
     id?: SortOrder
     sessionToken?: SortOrder
-    userId?: SortOrder
     expires?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: SessionCountOrderByAggregateInput
@@ -10167,8 +10224,8 @@ export namespace Prisma {
     NOT?: SessionScalarWhereWithAggregatesInput | SessionScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Session"> | string
     sessionToken?: StringWithAggregatesFilter<"Session"> | string
-    userId?: StringWithAggregatesFilter<"Session"> | string
     expires?: DateTimeWithAggregatesFilter<"Session"> | Date | string
+    userId?: StringWithAggregatesFilter<"Session"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Session"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Session"> | Date | string
   }
@@ -10217,6 +10274,9 @@ export namespace Prisma {
   }
 
   export type SettingsCreateInput = {
+    favIcon: string
+    smallLogo: string
+    smallDarkLogo: string
     headerLogo: string
     headerDarkLogo: string
     footerLogo: string
@@ -10238,6 +10298,9 @@ export namespace Prisma {
 
   export type SettingsUncheckedCreateInput = {
     id?: number
+    favIcon: string
+    smallLogo: string
+    smallDarkLogo: string
     headerLogo: string
     headerDarkLogo: string
     footerLogo: string
@@ -10258,6 +10321,9 @@ export namespace Prisma {
   }
 
   export type SettingsUpdateInput = {
+    favIcon?: StringFieldUpdateOperationsInput | string
+    smallLogo?: StringFieldUpdateOperationsInput | string
+    smallDarkLogo?: StringFieldUpdateOperationsInput | string
     headerLogo?: StringFieldUpdateOperationsInput | string
     headerDarkLogo?: StringFieldUpdateOperationsInput | string
     footerLogo?: StringFieldUpdateOperationsInput | string
@@ -10279,6 +10345,9 @@ export namespace Prisma {
 
   export type SettingsUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    favIcon?: StringFieldUpdateOperationsInput | string
+    smallLogo?: StringFieldUpdateOperationsInput | string
+    smallDarkLogo?: StringFieldUpdateOperationsInput | string
     headerLogo?: StringFieldUpdateOperationsInput | string
     headerDarkLogo?: StringFieldUpdateOperationsInput | string
     footerLogo?: StringFieldUpdateOperationsInput | string
@@ -10300,6 +10369,9 @@ export namespace Prisma {
 
   export type SettingsCreateManyInput = {
     id?: number
+    favIcon: string
+    smallLogo: string
+    smallDarkLogo: string
     headerLogo: string
     headerDarkLogo: string
     footerLogo: string
@@ -10320,6 +10392,9 @@ export namespace Prisma {
   }
 
   export type SettingsUpdateManyMutationInput = {
+    favIcon?: StringFieldUpdateOperationsInput | string
+    smallLogo?: StringFieldUpdateOperationsInput | string
+    smallDarkLogo?: StringFieldUpdateOperationsInput | string
     headerLogo?: StringFieldUpdateOperationsInput | string
     headerDarkLogo?: StringFieldUpdateOperationsInput | string
     footerLogo?: StringFieldUpdateOperationsInput | string
@@ -10341,6 +10416,9 @@ export namespace Prisma {
 
   export type SettingsUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    favIcon?: StringFieldUpdateOperationsInput | string
+    smallLogo?: StringFieldUpdateOperationsInput | string
+    smallDarkLogo?: StringFieldUpdateOperationsInput | string
     headerLogo?: StringFieldUpdateOperationsInput | string
     headerDarkLogo?: StringFieldUpdateOperationsInput | string
     footerLogo?: StringFieldUpdateOperationsInput | string
@@ -10379,13 +10457,13 @@ export namespace Prisma {
     id?: string
     title: string
     slug: string
-    userId: string
-    categoryId: number
     thumbnail: string
     shortDescription: string
     featuredImage?: string | null
     content: string
     views?: number
+    userId: string
+    categoryId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10409,13 +10487,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
-    categoryId?: IntFieldUpdateOperationsInput | number
     thumbnail?: StringFieldUpdateOperationsInput | string
     shortDescription?: StringFieldUpdateOperationsInput | string
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    categoryId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10424,13 +10502,13 @@ export namespace Prisma {
     id?: string
     title: string
     slug: string
-    userId: string
-    categoryId: number
     thumbnail: string
     shortDescription: string
     featuredImage?: string | null
     content: string
     views?: number
+    userId: string
+    categoryId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10452,13 +10530,13 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
-    categoryId?: IntFieldUpdateOperationsInput | number
     thumbnail?: StringFieldUpdateOperationsInput | string
     shortDescription?: StringFieldUpdateOperationsInput | string
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
+    categoryId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10767,8 +10845,8 @@ export namespace Prisma {
   export type SessionUncheckedCreateInput = {
     id?: string
     sessionToken: string
-    userId: string
     expires: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10785,8 +10863,8 @@ export namespace Prisma {
   export type SessionUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10794,8 +10872,8 @@ export namespace Prisma {
   export type SessionCreateManyInput = {
     id?: string
     sessionToken: string
-    userId: string
     expires: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10811,8 +10889,8 @@ export namespace Prisma {
   export type SessionUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     sessionToken?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
     expires?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10886,6 +10964,9 @@ export namespace Prisma {
 
   export type SettingsCountOrderByAggregateInput = {
     id?: SortOrder
+    favIcon?: SortOrder
+    smallLogo?: SortOrder
+    smallDarkLogo?: SortOrder
     headerLogo?: SortOrder
     headerDarkLogo?: SortOrder
     footerLogo?: SortOrder
@@ -10911,6 +10992,9 @@ export namespace Prisma {
 
   export type SettingsMaxOrderByAggregateInput = {
     id?: SortOrder
+    favIcon?: SortOrder
+    smallLogo?: SortOrder
+    smallDarkLogo?: SortOrder
     headerLogo?: SortOrder
     headerDarkLogo?: SortOrder
     footerLogo?: SortOrder
@@ -10932,6 +11016,9 @@ export namespace Prisma {
 
   export type SettingsMinOrderByAggregateInput = {
     id?: SortOrder
+    favIcon?: SortOrder
+    smallLogo?: SortOrder
+    smallDarkLogo?: SortOrder
     headerLogo?: SortOrder
     headerDarkLogo?: SortOrder
     footerLogo?: SortOrder
@@ -11032,33 +11119,33 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     slug?: SortOrder
-    userId?: SortOrder
-    categoryId?: SortOrder
     thumbnail?: SortOrder
     shortDescription?: SortOrder
     featuredImage?: SortOrder
     content?: SortOrder
     views?: SortOrder
+    userId?: SortOrder
+    categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type BlogAvgOrderByAggregateInput = {
-    categoryId?: SortOrder
     views?: SortOrder
+    categoryId?: SortOrder
   }
 
   export type BlogMaxOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
     slug?: SortOrder
-    userId?: SortOrder
-    categoryId?: SortOrder
     thumbnail?: SortOrder
     shortDescription?: SortOrder
     featuredImage?: SortOrder
     content?: SortOrder
     views?: SortOrder
+    userId?: SortOrder
+    categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -11067,20 +11154,20 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     slug?: SortOrder
-    userId?: SortOrder
-    categoryId?: SortOrder
     thumbnail?: SortOrder
     shortDescription?: SortOrder
     featuredImage?: SortOrder
     content?: SortOrder
     views?: SortOrder
+    userId?: SortOrder
+    categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type BlogSumOrderByAggregateInput = {
-    categoryId?: SortOrder
     views?: SortOrder
+    categoryId?: SortOrder
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -11357,8 +11444,8 @@ export namespace Prisma {
   export type SessionCountOrderByAggregateInput = {
     id?: SortOrder
     sessionToken?: SortOrder
-    userId?: SortOrder
     expires?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -11366,8 +11453,8 @@ export namespace Prisma {
   export type SessionMaxOrderByAggregateInput = {
     id?: SortOrder
     sessionToken?: SortOrder
-    userId?: SortOrder
     expires?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -11375,8 +11462,8 @@ export namespace Prisma {
   export type SessionMinOrderByAggregateInput = {
     id?: SortOrder
     sessionToken?: SortOrder
-    userId?: SortOrder
     expires?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -12017,12 +12104,12 @@ export namespace Prisma {
     id?: string
     title: string
     slug: string
-    userId: string
     thumbnail: string
     shortDescription: string
     featuredImage?: string | null
     content: string
     views?: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -12059,13 +12146,13 @@ export namespace Prisma {
     id?: StringFilter<"Blog"> | string
     title?: StringFilter<"Blog"> | string
     slug?: StringFilter<"Blog"> | string
-    userId?: StringFilter<"Blog"> | string
-    categoryId?: IntFilter<"Blog"> | number
     thumbnail?: StringFilter<"Blog"> | string
     shortDescription?: StringFilter<"Blog"> | string
     featuredImage?: StringNullableFilter<"Blog"> | string | null
     content?: StringFilter<"Blog"> | string
     views?: IntFilter<"Blog"> | number
+    userId?: StringFilter<"Blog"> | string
+    categoryId?: IntFilter<"Blog"> | number
     createdAt?: DateTimeFilter<"Blog"> | Date | string
     updatedAt?: DateTimeFilter<"Blog"> | Date | string
   }
@@ -12154,12 +12241,12 @@ export namespace Prisma {
     id?: string
     title: string
     slug: string
-    categoryId: number
     thumbnail: string
     shortDescription: string
     featuredImage?: string | null
     content: string
     views?: number
+    categoryId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -12231,8 +12318,8 @@ export namespace Prisma {
     NOT?: SessionScalarWhereInput | SessionScalarWhereInput[]
     id?: StringFilter<"Session"> | string
     sessionToken?: StringFilter<"Session"> | string
-    userId?: StringFilter<"Session"> | string
     expires?: DateTimeFilter<"Session"> | Date | string
+    userId?: StringFilter<"Session"> | string
     createdAt?: DateTimeFilter<"Session"> | Date | string
     updatedAt?: DateTimeFilter<"Session"> | Date | string
   }
@@ -12441,12 +12528,12 @@ export namespace Prisma {
     id?: string
     title: string
     slug: string
-    userId: string
     thumbnail: string
     shortDescription: string
     featuredImage?: string | null
     content: string
     views?: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -12469,12 +12556,12 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
     thumbnail?: StringFieldUpdateOperationsInput | string
     shortDescription?: StringFieldUpdateOperationsInput | string
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12483,12 +12570,12 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
     thumbnail?: StringFieldUpdateOperationsInput | string
     shortDescription?: StringFieldUpdateOperationsInput | string
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12521,12 +12608,12 @@ export namespace Prisma {
     id?: string
     title: string
     slug: string
-    categoryId: number
     thumbnail: string
     shortDescription: string
     featuredImage?: string | null
     content: string
     views?: number
+    categoryId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -12621,12 +12708,12 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    categoryId?: IntFieldUpdateOperationsInput | number
     thumbnail?: StringFieldUpdateOperationsInput | string
     shortDescription?: StringFieldUpdateOperationsInput | string
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
+    categoryId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12635,12 +12722,12 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    categoryId?: IntFieldUpdateOperationsInput | number
     thumbnail?: StringFieldUpdateOperationsInput | string
     shortDescription?: StringFieldUpdateOperationsInput | string
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
+    categoryId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

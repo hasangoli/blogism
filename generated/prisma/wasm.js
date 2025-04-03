@@ -116,6 +116,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.SettingsScalarFieldEnum = {
   id: 'id',
+  favIcon: 'favIcon',
+  smallLogo: 'smallLogo',
+  smallDarkLogo: 'smallDarkLogo',
   headerLogo: 'headerLogo',
   headerDarkLogo: 'headerDarkLogo',
   footerLogo: 'footerLogo',
@@ -139,13 +142,13 @@ exports.Prisma.BlogScalarFieldEnum = {
   id: 'id',
   title: 'title',
   slug: 'slug',
-  userId: 'userId',
-  categoryId: 'categoryId',
   thumbnail: 'thumbnail',
   shortDescription: 'shortDescription',
   featuredImage: 'featuredImage',
   content: 'content',
   views: 'views',
+  userId: 'userId',
+  categoryId: 'categoryId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -193,8 +196,8 @@ exports.Prisma.AccountScalarFieldEnum = {
 exports.Prisma.SessionScalarFieldEnum = {
   id: 'id',
   sessionToken: 'sessionToken',
-  userId: 'userId',
   expires: 'expires',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };

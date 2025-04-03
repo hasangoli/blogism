@@ -4,6 +4,7 @@ import { NoAuthSection } from "@/components/no-auth-section";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { fetchSettings } from "@/lib/api";
 import { Session } from "next-auth";
+import { cookies } from "next/headers";
 import { ReactNode } from "react";
 import { Settings } from "../../../generated/prisma";
 
@@ -18,8 +19,11 @@ const DashboardLayout = async ({
 
 	const settings = (await fetchSettings()) as Settings;
 
+	const cookieStore = await cookies();
+	const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+
 	return (
-		<SidebarProvider defaultOpen={false}>
+		<SidebarProvider defaultOpen={defaultOpen}>
 			<AppSidebar settings={settings} session={session} />
 			<main className="container">
 				<SidebarTrigger />
