@@ -1,8 +1,11 @@
 import { auth } from "@/auth";
+import { AppSidebar } from "@/components/layout/dashboard/app-sidebar";
 import { NoAuthSection } from "@/components/no-auth-section";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { fetchSettings } from "@/lib/api";
 import { Session } from "next-auth";
-import { redirect } from "next/navigation";
 import { ReactNode } from "react";
+import { Settings } from "../../../generated/prisma";
 
 const DashboardLayout = async ({
 	children,
@@ -13,9 +16,17 @@ const DashboardLayout = async ({
 
 	if (!session) return <NoAuthSection />;
 
-	if (session && session?.user?.type === "ADMIN") redirect("/admin");
+	const settings = (await fetchSettings()) as Settings;
 
-	return <main>{children}</main>;
+	return (
+		<SidebarProvider defaultOpen={false}>
+			<AppSidebar settings={settings} session={session} />
+			<main className="container">
+				<SidebarTrigger />
+				{children}
+			</main>
+		</SidebarProvider>
+	);
 };
 
 export default DashboardLayout;
