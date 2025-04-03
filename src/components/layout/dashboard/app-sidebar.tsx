@@ -1,4 +1,7 @@
+"use client";
+
 import { Avatar } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
 	Sidebar,
 	SidebarContent,
@@ -9,10 +12,11 @@ import {
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
+	useSidebar,
 } from "@/components/ui/sidebar";
 import { googleLogOut } from "@/lib/api";
 import { AvatarFallback } from "@radix-ui/react-avatar";
-import { BookOpenText, Gauge, LogOut, UserRoundPen } from "lucide-react";
+import { BookOpenText, Gauge, LogOut, UserRoundPen, X } from "lucide-react";
 import { Session } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,31 +47,30 @@ type Props = {
 };
 
 export const AppSidebar = ({ settings, session }: Props) => {
+	const { toggleSidebar } = useSidebar();
+
 	return (
 		<Sidebar side="right" variant="floating" collapsible="icon">
+			<div className="p-4 md:hidden">
+				<Button onClick={toggleSidebar}>
+					<X />
+				</Button>
+			</div>
 			<SidebarHeader>
-				<SidebarMenuButton
-					size="lg"
-					className="h-auto group-data-[collapsible=icon]:hidden">
-					<Logo
-						logo={settings?.headerLogo}
-						darkLogo={settings?.headerDarkLogo}
-						name={settings?.siteName}
-						className="w-[100px] mx-auto max-w-full"
-						target="_blank"
-					/>
-				</SidebarMenuButton>
-				<SidebarMenuButton
-					size="lg"
-					className="h-auto hidden group-data-[collapsible=icon]:block">
-					<Logo
-						logo={settings?.smallLogo}
-						darkLogo={settings?.smallDarkLogo}
-						name={settings?.siteName}
-						className="max-w-full"
-						target="_blank"
-					/>
-				</SidebarMenuButton>
+				<Logo
+					logo={settings?.headerLogo}
+					darkLogo={settings?.headerDarkLogo}
+					name={settings?.siteName}
+					className="w-[100px] mx-auto max-w-full group-data-[collapsible=icon]:hidden"
+					target="_blank"
+				/>
+				<Logo
+					logo={settings?.smallLogo}
+					darkLogo={settings?.smallDarkLogo}
+					name={settings?.siteName}
+					className="max-w-full hidden group-data-[collapsible=icon]:block"
+					target="_blank"
+				/>
 				<hr />
 			</SidebarHeader>
 			<SidebarContent>
@@ -97,8 +100,6 @@ export const AppSidebar = ({ settings, session }: Props) => {
 				</SidebarGroup>
 			</SidebarContent>
 			<SidebarFooter>
-				{/* <SidebarMenu> */}
-				{/* <SidebarMenuItem> */}
 				<SidebarMenuButton
 					size="lg"
 					className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
@@ -123,8 +124,6 @@ export const AppSidebar = ({ settings, session }: Props) => {
 						</span>
 					</div>
 				</SidebarMenuButton>
-				{/* </SidebarMenuItem> */}
-				{/* </SidebarMenu> */}
 			</SidebarFooter>
 		</Sidebar>
 	);

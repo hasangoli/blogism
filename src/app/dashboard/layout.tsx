@@ -1,7 +1,8 @@
 import { auth } from "@/auth";
+import { AppBreadcrumb } from "@/components/layout/dashboard/app-breadcrumb";
 import { AppSidebar } from "@/components/layout/dashboard/app-sidebar";
 import { NoAuthSection } from "@/components/no-auth-section";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { fetchSettings } from "@/lib/api";
 import { Session } from "next-auth";
 import { cookies } from "next/headers";
@@ -26,7 +27,7 @@ const DashboardLayout = async ({
 		<SidebarProvider defaultOpen={defaultOpen}>
 			<AppSidebar settings={settings} session={session} />
 			<main className="container">
-				<SidebarTrigger />
+				<AppBreadcrumb pageTitle="داشبورد" />
 				{children}
 			</main>
 		</SidebarProvider>
