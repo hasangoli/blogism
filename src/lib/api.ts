@@ -1,6 +1,7 @@
 "use server";
 
 import { signIn, signOut } from "@/auth";
+import { User } from "../../generated/prisma";
 import { prisma } from "./prisma";
 
 export const fetchSettings = async () => {
@@ -15,4 +16,9 @@ export const googleLogIn = async () => {
 
 export const googleLogOut = async () => {
 	await signOut({ redirectTo: "/" });
+};
+
+// Dashboard Actions
+export const updateProfile = async (data: Partial<User>) => {
+	console.log(data);
 };

@@ -1,5 +1,4 @@
 import { auth } from "@/auth";
-import { AppBreadcrumb } from "@/components/layout/dashboard/app-breadcrumb";
 import { AppSidebar } from "@/components/layout/dashboard/app-sidebar";
 import { NoAuthSection } from "@/components/no-auth-section";
 import { SidebarProvider } from "@/components/ui/sidebar";
@@ -26,10 +25,7 @@ const DashboardLayout = async ({
 	return (
 		<SidebarProvider defaultOpen={defaultOpen}>
 			<AppSidebar settings={settings} session={session} />
-			<main className="container">
-				<AppBreadcrumb pageTitle="داشبورد" />
-				{children}
-			</main>
+			<main className="container">{children}</main>
 		</SidebarProvider>
 	);
 };

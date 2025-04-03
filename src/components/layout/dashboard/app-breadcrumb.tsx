@@ -16,7 +16,7 @@ import { Fragment } from "react";
 
 type Props = {
 	pageTitle?: string;
-	links?: {
+	links: {
 		path: string;
 		title: string;
 	}[];
@@ -35,9 +35,9 @@ export const AppBreadcrumb = ({ pageTitle, links }: Props) => {
 							<PanelRight />
 						</Button>
 					</BreadcrumbItem>
-					{links?.map(link => (
-						<Fragment key={link.path}>
-							<BreadcrumbSeparator>/</BreadcrumbSeparator>
+					{links?.map((link, index) => (
+						<Fragment key={index}>
+							{index ? <BreadcrumbSeparator>/</BreadcrumbSeparator> : null}
 							<BreadcrumbItem>
 								<BreadcrumbLink href={link.path}>{link.title}</BreadcrumbLink>
 							</BreadcrumbItem>
