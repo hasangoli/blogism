@@ -9,8 +9,8 @@ const ACCEPTED_IMAGE_TYPES = [
 ];
 
 export const profileSchema = object({
+	id: string(),
 	name: string().min(1, { message: "نام و نام خانوادگی الزامی است" }),
-	// image: instanceof_(File)
 	image: any()
 		.refine(
 			files =>

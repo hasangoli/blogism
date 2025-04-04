@@ -19,13 +19,11 @@ import { z } from "zod";
 import { User } from "../../../../../generated/prisma";
 
 export const ProfileForm = ({ user }: { user: User }) => {
-	const formData = new FormData();
-
 	const form = useForm<z.infer<typeof profileSchema>>({
 		resolver: zodResolver(profileSchema),
 		defaultValues: {
+			id: user?.id,
 			name: user?.name || "",
-			image: undefined,
 			description: user?.description || "",
 			twitter: user?.twitter || "",
 			linkedIn: user?.linkedIn || "",
@@ -35,19 +33,23 @@ export const ProfileForm = ({ user }: { user: User }) => {
 		},
 	});
 
-	const onSubmit = (values: z.infer<typeof profileSchema>) => {
-		for (const [key, value] of Object.entries(values)) {
-			formData.append(key, value);
+	const onSubmit = async (values: z.infer<typeof profileSchema>) => {
+		try {
+			const response = await updateProfile(values);
+			console.log("Profile updated:", response);
+		} catch (error) {
+			console.error("Failed to update profile:", error);
 		}
-
-		updateProfile(values);
 	};
 
 	return (
 		<Form {...form}>
 			<form
 				className="grid grid-cols-1 gap-7"
-				onSubmit={form.handleSubmit(onSubmit)}
+				onSubmit={e => {
+					e.preventDefault();
+					form.handleSubmit(onSubmit)();
+				}}
 				encType="multipart/formdata">
 				<div className="grid lg:grid-cols-2 gap-7">
 					<FormField
@@ -72,7 +74,9 @@ export const ProfileForm = ({ user }: { user: User }) => {
 						name="image"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>تصویر پروفایل</FormLabel>
+								<FormLabel>
+									تصویر پروفایل <small>(100px * 100px)</small>
+								</FormLabel>
 								<FormControl>
 									<Input
 										type="file"
