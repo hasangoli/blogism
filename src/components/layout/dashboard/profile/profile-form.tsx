@@ -15,6 +15,7 @@ import { updateProfile } from "@/lib/api";
 import { profileSchema } from "@/lib/zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 import { User } from "../../../../../generated/prisma";
 
@@ -34,11 +35,11 @@ export const ProfileForm = ({ user }: { user: User }) => {
 	});
 
 	const onSubmit = async (values: z.infer<typeof profileSchema>) => {
-		try {
-			const response = await updateProfile(values);
-			console.log("Profile updated:", response);
-		} catch (error) {
-			console.error("Failed to update profile:", error);
+		const response = await updateProfile(values);
+		if (response.success) {
+			toast.success(response.message);
+		} else {
+			toast.error(response.message);
 		}
 	};
 
