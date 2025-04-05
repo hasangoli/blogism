@@ -31,3 +31,36 @@ export const profileSchema = object({
 	instagram: string().optional(),
 	telegram: string().optional(),
 });
+
+export const createBlogSchema = object({
+	title: string(),
+	slug: string(),
+	thumbnail: any()
+		.refine(
+			files =>
+				ACCEPTED_IMAGE_TYPES.includes(
+					(files as unknown as FileList)?.[0]?.type
+				),
+			"فرمت های قابل بارگذاری: .jpeg, .jpg, .png, .webp"
+		)
+		.refine(
+			files => (files as unknown as FileList)?.[0]?.size <= MAX_FILE_SIZE,
+			"حجم فایل نمی‌تواند بیش از ۱۰۰ کیلوبایت باشد"
+		),
+	featuredImage: any()
+		.refine(
+			files =>
+				ACCEPTED_IMAGE_TYPES.includes(
+					(files as unknown as FileList)?.[0]?.type
+				),
+			"فرمت های قابل بارگذاری: .jpeg, .jpg, .png, .webp"
+		)
+		.refine(
+			files => (files as unknown as FileList)?.[0]?.size <= MAX_FILE_SIZE,
+			"حجم فایل نمی‌تواند بیش از ۱۰۰ کیلوبایت باشد"
+		),
+	shortDescription: string().optional(),
+	content: string(),
+	userId: string(),
+	categoryId: string(),
+});

@@ -58,7 +58,7 @@ export const ProfileForm = ({ user }: { user: User }) => {
 						name="name"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>نام و نام خانوادگی</FormLabel>
+								<FormLabel className="required">نام و نام خانوادگی</FormLabel>
 								<FormControl>
 									<Input
 										type="text"

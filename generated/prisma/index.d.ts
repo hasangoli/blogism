@@ -2761,12 +2761,10 @@ export namespace Prisma {
 
   export type BlogAvgAggregateOutputType = {
     views: number | null
-    categoryId: number | null
   }
 
   export type BlogSumAggregateOutputType = {
     views: number | null
-    categoryId: number | null
   }
 
   export type BlogMinAggregateOutputType = {
@@ -2779,7 +2777,7 @@ export namespace Prisma {
     content: string | null
     views: number | null
     userId: string | null
-    categoryId: number | null
+    categoryId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2794,7 +2792,7 @@ export namespace Prisma {
     content: string | null
     views: number | null
     userId: string | null
-    categoryId: number | null
+    categoryId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2818,12 +2816,10 @@ export namespace Prisma {
 
   export type BlogAvgAggregateInputType = {
     views?: true
-    categoryId?: true
   }
 
   export type BlogSumAggregateInputType = {
     views?: true
-    categoryId?: true
   }
 
   export type BlogMinAggregateInputType = {
@@ -2968,7 +2964,7 @@ export namespace Prisma {
     content: string
     views: number
     userId: string
-    categoryId: number
+    categoryId: string
     createdAt: Date
     updatedAt: Date
     _count: BlogCountAggregateOutputType | null
@@ -3088,7 +3084,7 @@ export namespace Prisma {
       content: string
       views: number
       userId: string
-      categoryId: number
+      categoryId: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["blog"]>
@@ -3525,7 +3521,7 @@ export namespace Prisma {
     readonly content: FieldRef<"Blog", 'String'>
     readonly views: FieldRef<"Blog", 'Int'>
     readonly userId: FieldRef<"Blog", 'String'>
-    readonly categoryId: FieldRef<"Blog", 'Int'>
+    readonly categoryId: FieldRef<"Blog", 'String'>
     readonly createdAt: FieldRef<"Blog", 'DateTime'>
     readonly updatedAt: FieldRef<"Blog", 'DateTime'>
   }
@@ -3946,28 +3942,18 @@ export namespace Prisma {
 
   export type AggregateCategory = {
     _count: CategoryCountAggregateOutputType | null
-    _avg: CategoryAvgAggregateOutputType | null
-    _sum: CategorySumAggregateOutputType | null
     _min: CategoryMinAggregateOutputType | null
     _max: CategoryMaxAggregateOutputType | null
   }
 
-  export type CategoryAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type CategorySumAggregateOutputType = {
-    id: number | null
-  }
-
   export type CategoryMinAggregateOutputType = {
-    id: number | null
+    id: string | null
     title: string | null
     slug: string | null
   }
 
   export type CategoryMaxAggregateOutputType = {
-    id: number | null
+    id: string | null
     title: string | null
     slug: string | null
   }
@@ -3979,14 +3965,6 @@ export namespace Prisma {
     _all: number
   }
 
-
-  export type CategoryAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type CategorySumAggregateInputType = {
-    id?: true
-  }
 
   export type CategoryMinAggregateInputType = {
     id?: true
@@ -4045,18 +4023,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: CategoryAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: CategorySumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: CategoryMinAggregateInputType
@@ -4087,19 +4053,15 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: CategoryCountAggregateInputType | true
-    _avg?: CategoryAvgAggregateInputType
-    _sum?: CategorySumAggregateInputType
     _min?: CategoryMinAggregateInputType
     _max?: CategoryMaxAggregateInputType
   }
 
   export type CategoryGroupByOutputType = {
-    id: number
+    id: string
     title: string
     slug: string
     _count: CategoryCountAggregateOutputType | null
-    _avg: CategoryAvgAggregateOutputType | null
-    _sum: CategorySumAggregateOutputType | null
     _min: CategoryMinAggregateOutputType | null
     _max: CategoryMaxAggregateOutputType | null
   }
@@ -4158,7 +4120,7 @@ export namespace Prisma {
       blogs: Prisma.$BlogPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: string
       title: string
       slug: string
     }, ExtArgs["result"]["category"]>
@@ -4585,7 +4547,7 @@ export namespace Prisma {
    * Fields of the Category model
    */ 
   interface CategoryFieldRefs {
-    readonly id: FieldRef<"Category", 'Int'>
+    readonly id: FieldRef<"Category", 'String'>
     readonly title: FieldRef<"Category", 'String'>
     readonly slug: FieldRef<"Category", 'String'>
   }
@@ -9832,7 +9794,7 @@ export namespace Prisma {
     content?: StringFilter<"Blog"> | string
     views?: IntFilter<"Blog"> | number
     userId?: StringFilter<"Blog"> | string
-    categoryId?: IntFilter<"Blog"> | number
+    categoryId?: StringFilter<"Blog"> | string
     createdAt?: DateTimeFilter<"Blog"> | Date | string
     updatedAt?: DateTimeFilter<"Blog"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -9869,7 +9831,7 @@ export namespace Prisma {
     content?: StringFilter<"Blog"> | string
     views?: IntFilter<"Blog"> | number
     userId?: StringFilter<"Blog"> | string
-    categoryId?: IntFilter<"Blog"> | number
+    categoryId?: StringFilter<"Blog"> | string
     createdAt?: DateTimeFilter<"Blog"> | Date | string
     updatedAt?: DateTimeFilter<"Blog"> | Date | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -9909,7 +9871,7 @@ export namespace Prisma {
     content?: StringWithAggregatesFilter<"Blog"> | string
     views?: IntWithAggregatesFilter<"Blog"> | number
     userId?: StringWithAggregatesFilter<"Blog"> | string
-    categoryId?: IntWithAggregatesFilter<"Blog"> | number
+    categoryId?: StringWithAggregatesFilter<"Blog"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Blog"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Blog"> | Date | string
   }
@@ -9918,7 +9880,7 @@ export namespace Prisma {
     AND?: CategoryWhereInput | CategoryWhereInput[]
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
-    id?: IntFilter<"Category"> | number
+    id?: StringFilter<"Category"> | string
     title?: StringFilter<"Category"> | string
     slug?: StringFilter<"Category"> | string
     blogs?: BlogListRelationFilter
@@ -9932,7 +9894,7 @@ export namespace Prisma {
   }
 
   export type CategoryWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+    id?: string
     AND?: CategoryWhereInput | CategoryWhereInput[]
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
@@ -9946,17 +9908,15 @@ export namespace Prisma {
     title?: SortOrder
     slug?: SortOrder
     _count?: CategoryCountOrderByAggregateInput
-    _avg?: CategoryAvgOrderByAggregateInput
     _max?: CategoryMaxOrderByAggregateInput
     _min?: CategoryMinOrderByAggregateInput
-    _sum?: CategorySumOrderByAggregateInput
   }
 
   export type CategoryScalarWhereWithAggregatesInput = {
     AND?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
     OR?: CategoryScalarWhereWithAggregatesInput[]
     NOT?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Category"> | number
+    id?: StringWithAggregatesFilter<"Category"> | string
     title?: StringWithAggregatesFilter<"Category"> | string
     slug?: StringWithAggregatesFilter<"Category"> | string
   }
@@ -10463,7 +10423,7 @@ export namespace Prisma {
     content: string
     views?: number
     userId: string
-    categoryId: number
+    categoryId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10493,7 +10453,7 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
-    categoryId?: IntFieldUpdateOperationsInput | number
+    categoryId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10508,7 +10468,7 @@ export namespace Prisma {
     content: string
     views?: number
     userId: string
-    categoryId: number
+    categoryId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10536,50 +10496,53 @@ export namespace Prisma {
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
-    categoryId?: IntFieldUpdateOperationsInput | number
+    categoryId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CategoryCreateInput = {
+    id?: string
     title: string
     slug: string
     blogs?: BlogCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateInput = {
-    id?: number
+    id?: string
     title: string
     slug: string
     blogs?: BlogUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     blogs?: BlogUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     blogs?: BlogUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryCreateManyInput = {
-    id?: number
+    id?: string
     title: string
     slug: string
   }
 
   export type CategoryUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
   }
@@ -11132,7 +11095,6 @@ export namespace Prisma {
 
   export type BlogAvgOrderByAggregateInput = {
     views?: SortOrder
-    categoryId?: SortOrder
   }
 
   export type BlogMaxOrderByAggregateInput = {
@@ -11167,7 +11129,6 @@ export namespace Prisma {
 
   export type BlogSumOrderByAggregateInput = {
     views?: SortOrder
-    categoryId?: SortOrder
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -11217,10 +11178,6 @@ export namespace Prisma {
     slug?: SortOrder
   }
 
-  export type CategoryAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
   export type CategoryMaxOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
@@ -11231,10 +11188,6 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     slug?: SortOrder
-  }
-
-  export type CategorySumOrderByAggregateInput = {
-    id?: SortOrder
   }
 
   export type DateTimeNullableFilter<$PrismaModel = never> = {
@@ -12000,12 +11953,13 @@ export namespace Prisma {
   }
 
   export type CategoryCreateWithoutBlogsInput = {
+    id?: string
     title: string
     slug: string
   }
 
   export type CategoryUncheckedCreateWithoutBlogsInput = {
-    id?: number
+    id?: string
     title: string
     slug: string
   }
@@ -12076,12 +12030,13 @@ export namespace Prisma {
   }
 
   export type CategoryUpdateWithoutBlogsInput = {
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryUncheckedUpdateWithoutBlogsInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
   }
@@ -12152,7 +12107,7 @@ export namespace Prisma {
     content?: StringFilter<"Blog"> | string
     views?: IntFilter<"Blog"> | number
     userId?: StringFilter<"Blog"> | string
-    categoryId?: IntFilter<"Blog"> | number
+    categoryId?: StringFilter<"Blog"> | string
     createdAt?: DateTimeFilter<"Blog"> | Date | string
     updatedAt?: DateTimeFilter<"Blog"> | Date | string
   }
@@ -12246,7 +12201,7 @@ export namespace Prisma {
     featuredImage?: string | null
     content: string
     views?: number
-    categoryId: number
+    categoryId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -12613,7 +12568,7 @@ export namespace Prisma {
     featuredImage?: string | null
     content: string
     views?: number
-    categoryId: number
+    categoryId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -12713,7 +12668,7 @@ export namespace Prisma {
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
-    categoryId?: IntFieldUpdateOperationsInput | number
+    categoryId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12727,7 +12682,7 @@ export namespace Prisma {
     featuredImage?: NullableStringFieldUpdateOperationsInput | string | null
     content?: StringFieldUpdateOperationsInput | string
     views?: IntFieldUpdateOperationsInput | number
-    categoryId?: IntFieldUpdateOperationsInput | number
+    categoryId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

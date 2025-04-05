@@ -3,10 +3,12 @@
 		"autoincrement",
 		"blogism",
 		"cuid",
+		"sonner",
 		"turbopack",
 		"UNPOOLED",
 		"ادمین",
-		"بلاگیسم"
+		"بلاگیسم",
+		"نامک"
 	],
 	"postman.settings.dotenv-detection-notification-visibility": false
 }

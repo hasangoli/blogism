@@ -129,6 +129,11 @@
   .ugc-content img {
     max-width: 100% !important;
   }
+
+  label.required::after {
+    content: '*';
+    color: red;
+  }
 }
 
 @utility container {
