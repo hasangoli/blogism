@@ -215,7 +215,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/hasan/Projects/blogism/generated/prisma",
+      "value": "C:\\Users\\Hasan\\Desktop\\Projects\\blogism\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -224,12 +224,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "rhel-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/hasan/Projects/blogism/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\Hasan\\Desktop\\Projects\\blogism\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -243,7 +243,6 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {

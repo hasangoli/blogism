@@ -216,7 +216,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/hasan/Projects/blogism/generated/prisma",
+      "value": "C:\\Users\\Hasan\\Desktop\\Projects\\blogism\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -225,12 +225,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "rhel-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/hasan/Projects/blogism/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\Hasan\\Desktop\\Projects\\blogism\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -244,7 +244,6 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -293,8 +292,8 @@ exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
-path.join(__dirname, "libquery_engine-rhel-openssl-3.0.x.so.node");
-path.join(process.cwd(), "generated/prisma/libquery_engine-rhel-openssl-3.0.x.so.node")
+path.join(__dirname, "query_engine-windows.dll.node");
+path.join(process.cwd(), "generated/prisma/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "generated/prisma/schema.prisma")
