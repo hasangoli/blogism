@@ -23,12 +23,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Category } from "../../../../../generated/prisma";
+import { QuillEditor } from "./quill-editor";
 
 type Props = { userId: string; categories: Category[] };
 
 export const CreateBlogForm = ({ userId, categories }: Props) => {
-	console.log(categories);
-
 	const form = useForm<z.infer<typeof createBlogSchema>>({
 		resolver: zodResolver(createBlogSchema),
 		defaultValues: {
@@ -177,7 +176,8 @@ export const CreateBlogForm = ({ userId, categories }: Props) => {
 							<FormItem className="col-span-full">
 								<FormLabel className="required">محتوا</FormLabel>
 								<FormControl>
-									<Textarea placeholder="محتوا" {...field}></Textarea>
+									{/* <Textarea placeholder="محتوا" {...field}></Textarea> */}
+									<QuillEditor value={field.value} setValue={field.onChange} />
 								</FormControl>
 								<FormMessage />
 							</FormItem>
